@@ -1,0 +1,19 @@
+{
+  "name": "@planam/shared",
+  "version": "0.0.1",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc -p tsconfig.json"
+  },
+  "devDependencies": {
+    "dotenv": "^17.4.2",
+    "prisma": "6.19.3",
+    "typescript": "^5.9.3"
+  },
+  "dependencies": {
+    "@nestjs/common": "^11.2.3",
+    "@prisma/client": "^6.19.3",
+    "reflect-metadata": "^0.2.2"
+  }
+}

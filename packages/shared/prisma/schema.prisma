@@ -1,0 +1,104 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+  moduleFormat = "cjs"
+}
+
+datasource db {
+  provider = "postgresql"
+   url      = env("DATABASE_URL")
+}
+
+
+model User {
+  id        String   @id @default(uuid())
+  email     String   @unique
+  password  String
+  fullName  String
+  phone     String?
+  role      Role     @default(ATTENDEE)
+  isEmailVerified Boolean @default(false)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  vendorProfile VendorProfile?
+
+  events Event[]
+
+  @@map("users")
+}
+
+model VendorProfile {
+  id           String        @id @default(uuid())
+  userId       String        @unique
+  user         User          @relation(fields: [userId], references: [id], onDelete: Cascade)
+  businessName String
+  category     VendorCategory
+  bio          String?
+  location     String?
+  isVerified   Boolean       @default(false)
+  createdAt    DateTime      @default(now())
+  updatedAt    DateTime      @updatedAt
+
+  @@map("vendor_profiles")
+}
+
+
+
+enum Role {
+  HOST
+  VENDOR
+  PLANNER
+  ATTENDEE
+  ADMIN
+}
+
+enum VendorCategory {
+  CATERING
+  DECORATION
+  PHOTOGRAPHY
+  DJ
+  MC
+  VENUE_HALL
+  OTHER
+}
+
+model Event{
+  id           String      @id @default(uuid())
+  hostId       String
+  host         User        @relation(fields: [hostId], references: [id], onDelete: Cascade)
+  title        String
+  description  String?
+  eventType    EventType
+  status       EventStatus @default(DRAFT)
+  eventDate    DateTime
+  location     String?
+  guestCapacity Int?
+  budget       Decimal?    @db.Money
+  createdAt    DateTime    @default(now())
+  updatedAt    DateTime    @updatedAt
+
+  @@map("events")
+}
+
+enum EventType {
+  WEDDING
+  BIRTHDAY
+  CORPORATE
+  CONFERENCE
+  OTHER
+}
+
+enum EventStatus {
+  DRAFT
+  PLANNING
+  CONFIRMED
+  COMPLETED
+  CANCELLED
+}

@@ -1,0 +1,17 @@
+version: "3.8"
+services:
+  postgres:
+    image: postgres:16
+    container_name: planam-postgres
+    restart: always
+    environment:
+      POSTGRES_USER: planam
+      POSTGRES_PASSWORD: planam_dev_password
+      POSTGRES_DB: planam_dev
+    ports:
+      - "5433:5432"
+    volumes:
+      - planam_pg_data:/var/lib/postgresql/data
+
+volumes:
+  planam_pg_data:
