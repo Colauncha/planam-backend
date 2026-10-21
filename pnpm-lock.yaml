@@ -257,6 +257,9 @@ importers:
       jsonwebtoken:
         specifier: ^9.0.3
         version: 9.0.3
+      multer:
+        specifier: ^2.4.0
+        version: 2.4.0
       passport:
         specifier: ^0.7.0
         version: 0.7.0
