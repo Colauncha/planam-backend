@@ -1,0 +1,35 @@
+$kind: http-request
+name: Update Calendar Availability Schedule(Host/Vendor)
+description: ""
+url: "{{url}}/calendar/availability-schedule"
+method: PATCH
+body:
+  type: json
+  content: "{\r
+
+    \  \"timeZone\": \"Africa/Lagos\",\r
+
+    \  \"days\": [\r
+
+    \    { \"dayOfWeek\": 0, \"isActive\": true, \"ranges\": [{ \"start\": \"21:00\", \"end\": \"22:00\" }] },\r
+
+    \    { \"dayOfWeek\": 1, \"isActive\": true, \"ranges\": [{ \"start\": \"21:00\", \"end\": \"22:00\" }] },\r
+
+    \    { \"dayOfWeek\": 2, \"isActive\": true, \"ranges\": [{ \"start\": \"21:00\", \"end\": \"22:00\" }] },\r
+
+    \    { \"dayOfWeek\": 3, \"isActive\": true, \"ranges\": [{ \"start\": \"21:00\", \"end\": \"22:00\" }] },\r
+
+    \    { \"dayOfWeek\": 4, \"isActive\": true, \"ranges\": [{ \"start\": \"21:00\", \"end\": \"22:00\" }] },\r
+
+    \    { \"dayOfWeek\": 5, \"isActive\": true, \"ranges\": [{ \"start\": \"21:00\", \"end\": \"22:00\" }] },\r
+
+    \    { \"dayOfWeek\": 6, \"isActive\": true, \"ranges\": [{ \"start\": \"21:00\", \"end\": \"22:00\" }] }\r
+
+    \  ]\r
+
+    }"
+auth:
+  type: bearer
+  credentials:
+    token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIwNDRjYzc0ZS01NGE5LTQwOTItODE4NC0yZTQ2MzE5NTYwYzQiLCJlbWFpbCI6InZlbmRvckBwbGFuYW0udGVzdCIsInJvbGUiOiJWRU5ET1IiLCJpYXQiOjE3OTA4NTYzMDUsImV4cCI6MTc5MTQ2MTEwNX0.qKEq1LLpmsxoK8cxL4gsqAa__rVlfLcB-f0EnlszI9s
+order: 4503583405367673

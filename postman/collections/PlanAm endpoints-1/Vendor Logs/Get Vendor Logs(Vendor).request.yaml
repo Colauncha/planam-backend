@@ -1,0 +1,29 @@
+$kind: http-request
+description: |-
+  StartFragment
+
+  1. `GET /vendors/me/logs` returns quotes and invoices together, newest first, with a `meta` block (`total`, `page`, `pageSize`, `totalPages`).
+      
+  2. `GET /vendors/me/logs?type=QUOTE` returns only quotes, and `?type=INVOICE` returns only invoices.
+      
+  3. Status filters follow which table the status belongs to: `?status=DRAFT` returns only quotes, `?status=PAID` only invoices, and `?status=PENDING` can return both.
+      
+  4. `GET /vendors/me/logs?page=1&pageSize=2`, then `page=2`, to confirm the pages continue in order without repeating items, and that `totalPages` matches the total.
+      
+  5. `GET /vendors/me/logs?search=tola` matches on the host's name (the seeded host is Tola Adebayo) or the event title.
+      
+  6. `GET /vendors/me/logs?from=2026-09-01&to=2026-09-30` filters by creation date.
+      
+  7. To test "Past Due", open Prisma Studio, set an invoice's `dueDate` to a past date and leave its `status` as `PENDING`. It should now show as `OVERDUE` in the list and appear under `?status=OVERDUE`.
+      
+  8. Call the endpoint with the host's token and confirm you get a `403`.
+      
+
+  EndFragment
+url: "{{url}}/vendors/me/logs"
+method: GET
+auth:
+  type: bearer
+  credentials:
+    token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI5YTM0YzAwNy04ODg3LTQxNDYtYTJjOC1kNzcyMDFlODJhZWQiLCJlbWFpbCI6InZlbmRvckBwbGFuYW0udGVzdCIsInJvbGUiOiJWRU5ET1IiLCJpYXQiOjE3OTA1OTA2ODEsImV4cCI6MTc5MTE5NTQ4MX0.VmAUMlZgo-_mit--9mL12K2Urafqoloxg284eEe2G-4
+order: 2964113574247845

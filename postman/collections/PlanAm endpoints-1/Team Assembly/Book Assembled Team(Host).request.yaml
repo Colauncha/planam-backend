@@ -1,0 +1,12 @@
+$kind: http-request
+description: ""
+url: "{{url}}/events/87d83ad5-87fc-450f-82e8-e7b4a7c50e61/team/book"
+method: POST
+body:
+  type: json
+  content: '{"acceptTerms":true}'
+auth:
+  type: bearer
+  credentials:
+    token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhOGZhNDdlMy05Yzk4LTQ2ZTktOWVlMC02ZWU1M2FlMTdmNWUiLCJlbWFpbCI6Imhvc3QyQHBsYW5hbS50ZXN0Iiwicm9sZSI6IkhPU1QiLCJpYXQiOjE3OTE3NTMyMzcsImV4cCI6MTc5MjM1ODAzN30.nUMQQoslBdMccn7ZDim3TX4yNeUZOSelWzsfaxke0iM
+order: 3000

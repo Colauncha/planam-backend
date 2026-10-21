@@ -1,0 +1,10 @@
+$kind: http-request
+name: Get Booking Menu Selection(Vendor/Host)
+description: ""
+url: "{{url}}/bookings/41f35c13-ad11-438b-a0f3-80276ea3ae72/menu-selections"
+method: GET
+auth:
+  type: bearer
+  credentials:
+    token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJjN2RiMGY4MS1jNGMzLTQwN2YtOGFiOC0yZTU2OGVmMDFiMTYiLCJlbWFpbCI6InZlbmRvcjNAcGxhbmFtLmNvbSIsInJvbGUiOiJWRU5ET1IiLCJpYXQiOjE3OTA0MTgwNTgsImV4cCI6MTc5MTAyMjg1OH0.cAbVCwyjnjwCg38wl2ISF9mgdpu6OhhnYvxlmdTKpd4
+order: 4251673140457867

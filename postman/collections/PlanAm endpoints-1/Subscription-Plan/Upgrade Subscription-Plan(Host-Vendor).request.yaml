@@ -1,0 +1,16 @@
+$kind: http-request
+name: Upgrade Subscription/Plan(Host/Vendor)
+description: ""
+url: "{{url}}/subscriptions/me/upgrade"
+method: POST
+body:
+  type: json
+  content: |-
+    {
+         "email":"vendor.planam@gmail.com"
+     }
+auth:
+  type: bearer
+  credentials:
+    token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIwNDRjYzc0ZS01NGE5LTQwOTItODE4NC0yZTQ2MzE5NTYwYzQiLCJlbWFpbCI6InZlbmRvckBwbGFuYW0udGVzdCIsInJvbGUiOiJWRU5ET1IiLCJpYXQiOjE3OTExMTM2NTQsImV4cCI6MTc5MTcxODQ1NH0.pZ6mhId5LixomyI0vNpC8R2rUloXs1e_7nBE784FGJo
+order: 4402947277573369

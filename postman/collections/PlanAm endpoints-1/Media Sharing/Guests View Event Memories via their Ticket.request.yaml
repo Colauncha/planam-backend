@@ -1,0 +1,5 @@
+$kind: http-request
+description: ""
+url: "{{url}}/invitations/0fd766005a66/media"
+method: GET
+order: 4280226540928010

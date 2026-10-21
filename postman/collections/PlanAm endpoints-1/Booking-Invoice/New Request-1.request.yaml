@@ -1,0 +1,14 @@
+$kind: http-request
+name: New Request
+url: ""
+method: GET
+scripts:
+  - type: beforeRequest
+    code: |-
+      const secret = "sk_test_9a36733698cbc1501476b5d88c536bb3e7f0499a";
+      const body = pm.variables.replaceIn(pm.request.body.raw);
+      pm.request.headers.upsert({
+        key: 'x-paystack-signature',
+        value: CryptoJS.HmacSHA512(body, secret).toString()
+      });
+order: 3752339614731726

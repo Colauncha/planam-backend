@@ -1,0 +1,13 @@
+$kind: http-request
+name: Update Vendor/Planner Profile(VENDOR/PLANNER)
+description: ""
+url: "{{url}}/users/me/vendor-profile"
+method: PATCH
+body:
+  type: json
+  content: '{"bio": "Award-winning photographer in Lagos since 2018"}'
+auth:
+  type: bearer
+  credentials:
+    token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJjN2RiMGY4MS1jNGMzLTQwN2YtOGFiOC0yZTU2OGVmMDFiMTYiLCJlbWFpbCI6InZlbmRvcjNAcGxhbmFtLmNvbSIsInJvbGUiOiJWRU5ET1IiLCJpYXQiOjE3ODk2MzcyNzIsImV4cCI6MTc5MDI0MjA3Mn0.KQXShHXyUsgIBk4mx8fN-oKgxymOTAARos-Z78jMwj0
+order: 4469694168513244

@@ -1,0 +1,10 @@
+$kind: http-request
+name: Search for vendor via different queries(location or maxBudget or category or all of the above)
+description: ""
+url: "{{url}}/vendors?category=CATERING&maxBudget=500000&location=lagos"
+method: GET
+queryParams:
+  category: CATERING
+  maxBudget: "500000"
+  location: lagos
+order: 1197554679380958

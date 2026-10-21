@@ -1,0 +1,13 @@
+$kind: http-request
+name: Create Subtasks(Host/Vendor)
+description: ""
+url: "{{url}}/tasks/45dbc914-637b-4b73-a01d-d8f74417d03f/subtasks"
+method: POST
+body:
+  type: json
+  content: '{"title": "Post on Instagram / promote services"}'
+auth:
+  type: bearer
+  credentials:
+    token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIwNDRjYzc0ZS01NGE5LTQwOTItODE4NC0yZTQ2MzE5NTYwYzQiLCJlbWFpbCI6InZlbmRvckBwbGFuYW0udGVzdCIsInJvbGUiOiJWRU5ET1IiLCJpYXQiOjE3OTA4MDU2MzIsImV4cCI6MTc5MTQxMDQzMn0.glm4QKIG5C3iLGJL79oKgxWjSI-gfs7FrwKj_5eRXaI
+order: 4498837476111843

@@ -1,0 +1,22 @@
+$kind: http-request
+description: ""
+url: "{{url}}/bookings/instant"
+method: POST
+body:
+  type: json
+  content: "{\r
+
+    \  \"eventId\": \"086de2b6-3c1e-441b-9bfa-14119e25a50f\",\r
+
+    \  \"vendorProfileId\": \"36b70f2b-6a4f-4c99-afeb-d76993fc3572\",\r
+
+    \  \"packageId\": \"e0a21d26-c11b-431a-a45b-c04fa2e05614\",\r
+
+    \  \"acceptTerms\": false\r
+
+    }"
+auth:
+  type: bearer
+  credentials:
+    token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIyM2QzMzc4YS1jYzAwLTRkM2YtOTAzNS1mNmRjN2RmYjEzYmQiLCJlbWFpbCI6Imhvc3RAcGxhbmFtLnRlc3QiLCJyb2xlIjoiSE9TVCIsImlhdCI6MTc5MTQ2MzI2MywiZXhwIjoxNzkyMDY4MDYzfQ.ObRp6JR3GJrv4XxhJMMiO-UJeTzFlp2_ZIt385fHLAo
+order: 4503599269244871

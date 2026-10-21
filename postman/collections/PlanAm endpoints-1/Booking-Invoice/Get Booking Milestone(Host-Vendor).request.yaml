@@ -1,0 +1,10 @@
+$kind: http-request
+name: Get Booking Milestone(Host/Vendor)
+description: ""
+url: "{{url}}/bookings/2f944cae-ec6d-46eb-8686-1c2856d2bd53/milestones"
+method: GET
+auth:
+  type: bearer
+  credentials:
+    token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIyM2QzMzc4YS1jYzAwLTRkM2YtOTAzNS1mNmRjN2RmYjEzYmQiLCJlbWFpbCI6Imhvc3RAcGxhbmFtLnRlc3QiLCJyb2xlIjoiSE9TVCIsImlhdCI6MTc5MTQ2MzI2MywiZXhwIjoxNzkyMDY4MDYzfQ.ObRp6JR3GJrv4XxhJMMiO-UJeTzFlp2_ZIt385fHLAo
+order: 4503599621091187

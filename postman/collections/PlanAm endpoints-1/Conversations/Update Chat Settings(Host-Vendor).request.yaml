@@ -1,0 +1,15 @@
+$kind: http-request
+name: Update Chat Settings(Host/Vendor)
+description: ""
+url: "{{url}}/conversations/bf4ddad6-eb84-4f5a-9e28-080c71f99d38/settings"
+method: PATCH
+body:
+  type: json
+  content: "{\"isPinned\": true,\r
+
+    \"markedUnread\":true}"
+auth:
+  type: bearer
+  credentials:
+    token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIwNDRjYzc0ZS01NGE5LTQwOTItODE4NC0yZTQ2MzE5NTYwYzQiLCJlbWFpbCI6InZlbmRvci5wbGFuYW1AZ21haWwuY29tIiwicm9sZSI6IlZFTkRPUiIsImlhdCI6MTc5MTI4NDM3NCwiZXhwIjoxNzkxODg5MTc0fQ.16E8AaxIkhmGA6Pkj7QHKCIXtAQdojVkUiApbQ6S9h8
+order: 4498424681722199

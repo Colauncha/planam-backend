@@ -1,0 +1,12 @@
+$kind: http-request
+name: Ai search for Vendors/Planners(Host)
+description: ""
+url: "{{url}}/events/4d6a1a03-bedf-465f-8023-d03a5d73d939/recommendations?category=CATERING"
+method: GET
+queryParams:
+  category: CATERING
+auth:
+  type: bearer
+  credentials:
+    token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2YjQ4YzNiZi1jODUyLTRjY2UtOTBmZi1mYzZkMGMzMjFlOTAiLCJlbWFpbCI6Imhvc3QzQHBsYW5hbS5jb20iLCJyb2xlIjoiSE9TVCIsImlhdCI6MTc5MDMyNTkzMiwiZXhwIjoxNzkwOTMwNzMyfQ.ocRKhQrm3pif_qHcOYEVBA9_rxQPjRlNXkVYKEJD8UY
+order: 1790349480253

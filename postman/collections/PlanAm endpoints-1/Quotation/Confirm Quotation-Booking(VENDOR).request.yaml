@@ -1,0 +1,10 @@
+$kind: http-request
+name: Confirm Quotation/Booking(VENDOR)
+description: ""
+url: "{{url}}/bookings/mine/as-vendor"
+method: GET
+auth:
+  type: bearer
+  credentials:
+    token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJjN2RiMGY4MS1jNGMzLTQwN2YtOGFiOC0yZTU2OGVmMDFiMTYiLCJlbWFpbCI6InZlbmRvcjNAcGxhbmFtLmNvbSIsInJvbGUiOiJWRU5ET1IiLCJpYXQiOjE3ODk2NDQyMDUsImV4cCI6MTc5MDI0OTAwNX0.U32EWewDmSlnf-DlqTHY2_8s1zQjYtL8MgqPtZfj7sU
+order: 4484769404895101

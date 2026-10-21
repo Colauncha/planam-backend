@@ -1,0 +1,19 @@
+$kind: http-request
+name: Upload Portfolio Image(Vendor/Planner)
+description: ""
+url: "{{url}}/users/me/vendor-profile/portfolio"
+method: POST
+body:
+  type: formdata
+  content:
+    - type: file
+      key: file
+      src:
+        - /C:/Users/OGKpos/Videos/XenderDownload/image/cover/0ac8da67-83fd-41fa-8d9c-556f5a368e2b_audio.png
+      description: ""
+      disabled: false
+auth:
+  type: bearer
+  credentials:
+    token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJjN2RiMGY4MS1jNGMzLTQwN2YtOGFiOC0yZTU2OGVmMDFiMTYiLCJlbWFpbCI6InZlbmRvcjNAcGxhbmFtLmNvbSIsInJvbGUiOiJWRU5ET1IiLCJpYXQiOjE3OTAzNDYwNjIsImV4cCI6MTc5MDk1MDg2Mn0.8oR3JCaxxZRzx80WSzkKjvN5KqJAhn4XIdEH3q6RsRo
+order: 4474920880355144

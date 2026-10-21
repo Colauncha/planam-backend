@@ -1,0 +1,25 @@
+$kind: http-request
+name: Create Vendor/Planner Profile(VENDOR/PLANNER)
+description: ""
+url: "{{url}}/users/me/vendor-profile"
+method: POST
+body:
+  type: json
+  content: "{\r
+
+    \    \"businessName\":\"Ogkpos Photography\",\r
+
+    \    \"category\":\"PHOTOGRAPHY\",\r
+
+    \    \"location\":\"Lekki, Lagos\",\r
+
+    \    \"bio\":\"We produce magic\",\r
+
+    \    \"startingPrice\":15000\r
+
+    }"
+auth:
+  type: bearer
+  credentials:
+    token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJjN2RiMGY4MS1jNGMzLTQwN2YtOGFiOC0yZTU2OGVmMDFiMTYiLCJlbWFpbCI6InZlbmRvcjNAcGxhbmFtLmNvbSIsInJvbGUiOiJWRU5ET1IiLCJpYXQiOjE3ODk2MzcyNzIsImV4cCI6MTc5MDI0MjA3Mn0.KQXShHXyUsgIBk4mx8fN-oKgxymOTAARos-Z78jMwj0
+order: 3631922895925838

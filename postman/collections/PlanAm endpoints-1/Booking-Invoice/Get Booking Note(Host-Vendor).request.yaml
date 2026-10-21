@@ -1,0 +1,10 @@
+$kind: http-request
+name: Get Booking Note(Host/Vendor)
+description: ""
+url: "{{url}}/bookings/41f35c13-ad11-438b-a0f3-80276ea3ae72/notes"
+method: GET
+auth:
+  type: bearer
+  credentials:
+    token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhOTBkZjNkZS1jYmQwLTRmYTEtOTU3Zi1hN2ZjYmJlYjI5NjciLCJlbWFpbCI6Imhvc3RAcGxhbmFtLmNvbSIsInJvbGUiOiJIT1NUIiwiaWF0IjoxNzkwNDIyNDc3LCJleHAiOjE3OTEwMjcyNzd9.J73QIJU9YzqGd4nT1TMLhKSsSgWKzob4F5KxXccbem4
+order: 4502937028725492

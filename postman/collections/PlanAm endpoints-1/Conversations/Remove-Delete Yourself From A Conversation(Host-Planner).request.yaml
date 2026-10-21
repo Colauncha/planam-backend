@@ -1,0 +1,10 @@
+$kind: http-request
+name: Remove/Delete Yourself From A Conversation(Host/Planner)
+description: ""
+url: "{{url}}/conversations/bf4ddad6-eb84-4f5a-9e28-080c71f99d38"
+method: DELETE
+auth:
+  type: bearer
+  credentials:
+    token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIwNDRjYzc0ZS01NGE5LTQwOTItODE4NC0yZTQ2MzE5NTYwYzQiLCJlbWFpbCI6InZlbmRvci5wbGFuYW1AZ21haWwuY29tIiwicm9sZSI6IlZFTkRPUiIsImlhdCI6MTc5MTI4OTY0MCwiZXhwIjoxNzkxODk0NDQwfQ.1XNIS6FNq7mZGOH8A3brp8n99v0MV8t4ecN1Hu4u3dk
+order: 4501697027770319

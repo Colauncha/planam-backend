@@ -1,0 +1,10 @@
+$kind: http-request
+name: Get Vendor/Planner Profile(VENDOR/PLANNER)
+description: ""
+url: "{{url}}/users/me/vendor-profile"
+method: GET
+auth:
+  type: bearer
+  credentials:
+    token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJjN2RiMGY4MS1jNGMzLTQwN2YtOGFiOC0yZTU2OGVmMDFiMTYiLCJlbWFpbCI6InZlbmRvcjNAcGxhbmFtLmNvbSIsInJvbGUiOiJWRU5ET1IiLCJpYXQiOjE3ODk2MzcyNzIsImV4cCI6MTc5MDI0MjA3Mn0.KQXShHXyUsgIBk4mx8fN-oKgxymOTAARos-Z78jMwj0
+order: 4428382589575506

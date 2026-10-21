@@ -1,0 +1,24 @@
+$kind: http-request
+description: ""
+url: "{{url}}/vendors/me/packages"
+method: POST
+body:
+  type: json
+  content: "{\r
+
+    \  \"name\": \"Gold Package\",\r
+
+    \  \"serviceDurationHours\": 8,\r
+
+    \  \"guestCapacity\": 300,\r
+
+    \  \"includes\": [\"8-hour service duration\", \"Buffet service for 300 guests\", \"10 serving staff\", \"Basic table setup included\"],\r
+
+    \  \"basePrice\": 1200000\r
+
+    }"
+auth:
+  type: bearer
+  credentials:
+    token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJjN2RiMGY4MS1jNGMzLTQwN2YtOGFiOC0yZTU2OGVmMDFiMTYiLCJlbWFpbCI6InZlbmRvcjNAcGxhbmFtLmNvbSIsInJvbGUiOiJWRU5ET1IiLCJpYXQiOjE3OTA0MTI2NTksImV4cCI6MTc5MTAxNzQ1OX0.0JC6iAZbSXqqXeKZrOF3G0EYCItkexUsTS5Jg8cmry8
+order: 407753969311978

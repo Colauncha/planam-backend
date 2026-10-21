@@ -1,0 +1,9 @@
+$kind: http-request
+description: ""
+url: "{{url}}/media/0c043c73-f05f-44c1-af4a-7278869780dd"
+method: DELETE
+auth:
+  type: bearer
+  credentials:
+    token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhOTBkZjNkZS1jYmQwLTRmYTEtOTU3Zi1hN2ZjYmJlYjI5NjciLCJlbWFpbCI6Imhvc3RAcGxhbmFtLmNvbSIsInJvbGUiOiJIT1NUIiwiaWF0IjoxNzg5ODE4MTY1LCJleHAiOjE3OTA0MjI5NjV9.h9Q0vU1kYwDsIzAXcDm_piENMvXaz6RSkGDEb43AQ1A
+order: 4299587757350765

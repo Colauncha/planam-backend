@@ -1,0 +1,9 @@
+$kind: http-request
+description: ""
+url: "{{url}}/vendors"
+method: GET
+auth:
+  type: bearer
+  credentials:
+    token: ""
+order: 4503539470412324

@@ -1,0 +1,10 @@
+$kind: http-request
+name: Get Support Ticket by Id(Host/Vendor)
+description: ""
+url: "{{url}}/support/tickets/ef928a80-06ac-47a3-9955-6a0d6e382e7f"
+method: GET
+auth:
+  type: bearer
+  credentials:
+    token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIwNDRjYzc0ZS01NGE5LTQwOTItODE4NC0yZTQ2MzE5NTYwYzQiLCJlbWFpbCI6InZlbmRvckBwbGFuYW0udGVzdCIsInJvbGUiOiJWRU5ET1IiLCJpYXQiOjE3OTExMDM3NTIsImV4cCI6MTc5MTcwODU1Mn0.oaoC7e7ny8wXUzyRcnCIuo9IphhWEuPQ-F8RuA7mJPw
+order: 3975841587608645

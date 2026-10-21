@@ -1,0 +1,9 @@
+$kind: http-request
+name: Accept/Decline an Invite by a Guest
+description: ""
+url: "{{url}}/invitations/0fd766005a66/rsvp"
+method: PATCH
+body:
+  type: json
+  content: '{ "status": "ACCEPTED" }'
+order: 2720909227771096

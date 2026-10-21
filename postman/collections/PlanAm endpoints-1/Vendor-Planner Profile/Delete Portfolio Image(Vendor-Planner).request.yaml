@@ -1,0 +1,10 @@
+$kind: http-request
+name: Delete Portfolio Image(Vendor/Planner)
+description: ""
+url: "{{url}}/users/me/vendor-profile/portfolio/068b82da-6ca0-4caf-9823-fbe2f7ce8ead"
+method: DELETE
+auth:
+  type: bearer
+  credentials:
+    token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJjN2RiMGY4MS1jNGMzLTQwN2YtOGFiOC0yZTU2OGVmMDFiMTYiLCJlbWFpbCI6InZlbmRvcjNAcGxhbmFtLmNvbSIsInJvbGUiOiJWRU5ET1IiLCJpYXQiOjE3OTA0MDk5OTgsImV4cCI6MTc5MTAxNDc5OH0.Cr_9wayBXng80tIGRxaawn9u2D9QwKYVM49q1CWVHOs
+order: 4497432854609266

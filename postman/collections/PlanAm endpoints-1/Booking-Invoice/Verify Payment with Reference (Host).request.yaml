@@ -1,0 +1,52 @@
+$kind: http-request
+description: ""
+url: "{{url}}/payments/verify/plan-am-ce2816b3-b784-4f95-a020-75b193e81a7b-1791541207299"
+method: GET
+headers:
+  Content-Type: application/json
+  "": ""
+body:
+  type: json
+  content: ""
+auth:
+  type: bearer
+  credentials:
+    token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIyM2QzMzc4YS1jYzAwLTRkM2YtOTAzNS1mNmRjN2RmYjEzYmQiLCJlbWFpbCI6Imhvc3RAb3V0bG9vay5jb20iLCJyb2xlIjoiSE9TVCIsImlhdCI6MTc5MTU0MTE3NSwiZXhwIjoxNzkyMTQ1OTc1fQ.88UbfaLCkOqc0J42xPfWb8NsHtAYRobTQB9xMZSYS8o
+scripts:
+  - type: afterResponse
+    code: ""
+    language: text/javascript
+  - type: beforeRequest
+    code: "const secret = \"local_test_secret\";\r
+
+      \r
+
+      // Read the exact raw JSON body configured in Postman\r
+
+      const payload = pm.request.body.raw;\r
+
+      \r
+
+      // Generate HMAC-SHA512 signature\r
+
+      const signature = CryptoJS.HmacSHA512(\r
+
+      \    payload,\r
+
+      \    secret\r
+
+      ).toString(CryptoJS.enc.Hex);\r
+
+      \r
+
+      // Set the Paystack signature header\r
+
+      pm.request.headers.upsert({\r
+
+      \    key: \"x-paystack-signature\",\r
+
+      \    value: signature\r
+
+      });\r\n"
+    language: text/javascript
+order: 4503599621094187

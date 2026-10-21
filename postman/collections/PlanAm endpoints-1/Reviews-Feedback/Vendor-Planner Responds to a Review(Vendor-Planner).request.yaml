@@ -1,0 +1,13 @@
+$kind: http-request
+name: Vendor/Planner Responds to a Review(Vendor/Planner)
+description: ""
+url: "{{url}}/reviews/36bcc208-f5c6-42f0-be72-1069a8484dc0/respond"
+method: PATCH
+body:
+  type: json
+  content: '{"response": "Thank you so much for the kind words!"}'
+auth:
+  type: bearer
+  credentials:
+    token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJjN2RiMGY4MS1jNGMzLTQwN2YtOGFiOC0yZTU2OGVmMDFiMTYiLCJlbWFpbCI6InZlbmRvcjNAcGxhbmFtLmNvbSIsInJvbGUiOiJWRU5ET1IiLCJpYXQiOjE3ODk4MTk2MzIsImV4cCI6MTc5MDQyNDQzMn0.PfKIEXRUfmTZ52w4i2tZf-gwiZdPWfnbfzSQpOcIQMQ
+order: 4442264151810443

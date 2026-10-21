@@ -1,0 +1,18 @@
+$kind: http-request
+description: ""
+url: "{{url}}/vendors/36b70f2b-6a4f-4c99-afeb-d76993fc3572/reviews/public"
+method: POST
+body:
+  type: json
+  content: "{\r
+
+    \    \"authorName\": \"Tunde Balogun\",\r
+
+    \     \"authorEmail\": \"tunde@example.com\",\r
+
+    \      \"rating\": 5, \r
+
+    \      \"comment\": \"Great catering services.\"\r
+
+    }"
+order: 4503371194272737

@@ -1,0 +1,10 @@
+$kind: http-request
+name: Get Conversation(Host/Vendor)
+description: ""
+url: "{{url}}/conversations"
+method: GET
+auth:
+  type: bearer
+  credentials:
+    token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIyM2QzMzc4YS1jYzAwLTRkM2YtOTAzNS1mNmRjN2RmYjEzYmQiLCJlbWFpbCI6Imhvc3RAcGxhbmFtLnRlc3QiLCJyb2xlIjoiSE9TVCIsImlhdCI6MTc5MTIxMTEyNSwiZXhwIjoxNzkxODE1OTI1fQ.YplsXO92r-aC47Igg4k-tCNBsojKisUEAUftn_qPWn8
+order: 3558203031043921

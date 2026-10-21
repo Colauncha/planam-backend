@@ -1,0 +1,28 @@
+$kind: http-request
+description: ""
+url: "{{url}}/events/4d6a1a03-bedf-465f-8023-d03a5d73d939/media"
+method: POST
+body:
+  type: formdata
+  content:
+    - type: file
+      key: file
+      src:
+        - /C:/Users/OGKpos/Videos/XenderDownload/image/cover/00d15589-7866-4843-be92-dfd24dc73ac5_audio.png
+      description: ""
+      disabled: false
+    - type: text
+      key: type
+      value: PHOTO
+      description: ""
+      disabled: false
+    - type: text
+      key: caption
+      value: Setting up the venue
+      description: ""
+      disabled: false
+auth:
+  type: bearer
+  credentials:
+    token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2YjQ4YzNiZi1jODUyLTRjY2UtOTBmZi1mYzZkMGMzMjFlOTAiLCJlbWFpbCI6Imhvc3QzQHBsYW5hbS5jb20iLCJyb2xlIjoiSE9TVCIsImlhdCI6MTc4OTgxNjg4NiwiZXhwIjoxNzkwNDIxNjg2fQ.K4u_zhrTS-7HXuS6C7LQBFs6HdVVJnqrSFdnOXH8WPw
+order: 4056462886132112

@@ -1,4 +1,5 @@
 import {
+  IsArray,
   IsDateString,
   IsEnum,
   IsNotEmpty,
@@ -37,4 +38,17 @@ export class CreateEventDto {
   @IsNumber()
   @Min(0)
   budget?: number;
+
+  @IsOptional()
+  @IsString()
+  dressCode?: string;
+
+  @IsOptional()
+  @IsArray()
+  @IsString({ each: true })
+  suggestedColors?: string[];
+
+  @IsOptional()
+  @IsDateString()
+  rsvpDeadline?: string;
 }

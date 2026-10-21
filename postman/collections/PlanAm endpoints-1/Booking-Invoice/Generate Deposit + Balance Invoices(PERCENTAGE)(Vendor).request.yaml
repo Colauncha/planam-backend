@@ -1,0 +1,26 @@
+$kind: http-request
+description: ""
+url: "{{url}}/bookings/ba0d5e5d-12ad-4ca7-8163-8f1820c7e32c/invoices/generate-split"
+method: POST
+body:
+  type: json
+  content: "{\r
+
+    \  \"depositType\": \"PERCENTAGE\",\r
+
+    \  \"depositPercentage\": 70,\r
+
+    \  \"taxRate\": 10,\r
+
+    \  \"depositDueDate\": \"2026-10-05\",\r
+
+    \  \"balanceDueTiming\": \"IMMEDIATELY_AFTER_SERVICE\",\r
+
+    \  \"note\": \"Please ensure payment is made by the due date to avoid delays\"\r
+
+    }"
+auth:
+  type: bearer
+  credentials:
+    token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI4Yjg0YTBjMS1lYmNiLTQyMGQtYjA5NC02NWUwNWU1OTMwMWIiLCJlbWFpbCI6InZlbmRvckBwbGFuYW0udGVzdCIsInJvbGUiOiJWRU5ET1IiLCJpYXQiOjE3OTA1MDAyMjIsImV4cCI6MTc5MTEwNTAyMn0.YHPn-ta99t0FxE1doMbYVLdLjLYz5w-s4M_HVam5BtA
+order: 4503544682873522

@@ -1,0 +1,10 @@
+$kind: http-request
+name: Get Nearest Event Tied To A Booking(Host/Vendor)
+description: ""
+url: "{{url}}/calendar/upcoming"
+method: GET
+auth:
+  type: bearer
+  credentials:
+    token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI5YTM0YzAwNy04ODg3LTQxNDYtYTJjOC1kNzcyMDFlODJhZWQiLCJlbWFpbCI6InZlbmRvckBwbGFuYW0udGVzdCIsInJvbGUiOiJWRU5ET1IiLCJpYXQiOjE3OTA3NzYzMTIsImV4cCI6MTc5MTM4MTExMn0.BbbaUd-L9nCeIQ7ZPe_s5kkNIa3cuUrcJ0frZhKaT-Y
+order: 4397711426672901

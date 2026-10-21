@@ -1,0 +1,16 @@
+$kind: http-request
+description: ""
+url: "{{url}}/packages/ec20d48b-bb99-4158-8392-b29230265e75/menu-items"
+method: POST
+body:
+  type: json
+  content: "{\r
+
+    \    \"menuItemIds\": [\"38c0f3a6-38c9-47d3-98e0-aecbd7a1276d\", \"4fe1c32c-13de-41fc-a193-2af700208b33\"]\r
+
+    }"
+auth:
+  type: bearer
+  credentials:
+    token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIwNDRjYzc0ZS01NGE5LTQwOTItODE4NC0yZTQ2MzE5NTYwYzQiLCJlbWFpbCI6InZlbmRvckBwbGFuYW0udGVzdCIsInJvbGUiOiJWRU5ET1IiLCJpYXQiOjE3OTA5Mzg2NDksImV4cCI6MTc5MTU0MzQ0OX0.NRZgrW1H5TEXHaGRCAclKsKSY_7D4Uy81dJ9IyVYHg0
+order: 4502745309118385

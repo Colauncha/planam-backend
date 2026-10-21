@@ -1,0 +1,13 @@
+$kind: http-request
+name: "Create Booking Timeline Event(Vendor/Planner) "
+description: ""
+url: "{{url}}/bookings/41f35c13-ad11-438b-a0f3-80276ea3ae72/timeline"
+method: POST
+body:
+  type: json
+  content: '{ "label": "Set up Begins", "time": "9:00 AM", "order": 1 }'
+auth:
+  type: bearer
+  credentials:
+    token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJjN2RiMGY4MS1jNGMzLTQwN2YtOGFiOC0yZTU2OGVmMDFiMTYiLCJlbWFpbCI6InZlbmRvcjNAcGxhbmFtLmNvbSIsInJvbGUiOiJWRU5ET1IiLCJpYXQiOjE3OTA0MjEyOTUsImV4cCI6MTc5MTAyNjA5NX0.jraBl5RQMmQJsAGgDfJEq93ZXadZATbPl07APdwAbaM
+order: 4501971860387935

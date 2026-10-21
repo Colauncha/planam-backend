@@ -1,0 +1,10 @@
+$kind: http-request
+name: Get Calendar Availability Schedule(Host/Vendor)
+description: ""
+url: "{{url}}/calendar/availability-schedule"
+method: GET
+auth:
+  type: bearer
+  credentials:
+    token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIwNDRjYzc0ZS01NGE5LTQwOTItODE4NC0yZTQ2MzE5NTYwYzQiLCJlbWFpbCI6InZlbmRvckBwbGFuYW0udGVzdCIsInJvbGUiOiJWRU5ET1IiLCJpYXQiOjE3OTA4NTYzMDUsImV4cCI6MTc5MTQ2MTEwNX0.qKEq1LLpmsxoK8cxL4gsqAa__rVlfLcB-f0EnlszI9s
+order: 4503540791564663

@@ -1,0 +1,6 @@
+$kind: http-request
+name: Get Vendor/Planner portfolio Images
+description: ""
+url: "{{url}}/vendors/7ec059dd-868b-4f24-bf9a-aa9bd0dad308/portfolio"
+method: GET
+order: 4489116629503989

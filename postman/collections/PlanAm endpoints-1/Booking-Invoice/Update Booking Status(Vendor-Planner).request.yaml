@@ -1,0 +1,13 @@
+$kind: http-request
+name: Update Booking Status(Vendor/Planner)
+description: ""
+url: "{{url}}/bookings/41f35c13-ad11-438b-a0f3-80276ea3ae72/status"
+method: PATCH
+body:
+  type: json
+  content: '{"status": "PREPARING"}'
+auth:
+  type: bearer
+  credentials:
+    token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJjN2RiMGY4MS1jNGMzLTQwN2YtOGFiOC0yZTU2OGVmMDFiMTYiLCJlbWFpbCI6InZlbmRvcjNAcGxhbmFtLmNvbSIsInJvbGUiOiJWRU5ET1IiLCJpYXQiOjE3OTA0OTY0MzMsImV4cCI6MTc5MTEwMTIzM30.9xC9kKGkCQgc2MAZGKtK_gXgHoXpRruKJSM0GMH2aB0
+order: 4503486010874457

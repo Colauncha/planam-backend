@@ -1,0 +1,25 @@
+$kind: http-request
+name: Update Users General Settings(Host/Vendor)
+description: ""
+url: "{{url}}/users/me/settings/general"
+method: PATCH
+body:
+  type: json
+  content: "{\r
+
+    \    \"language\": \"en\", \r
+
+    \    \"businessAddress\": \"Ikeja, Lagos\",\r
+
+    \     \"zipCode\": \"01234\",\r
+
+    \      \"country\": \"Nigeria\", \r
+
+    \      \"state\": \"Lagos\"\r
+
+    }"
+auth:
+  type: bearer
+  credentials:
+    token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIwNDRjYzc0ZS01NGE5LTQwOTItODE4NC0yZTQ2MzE5NTYwYzQiLCJlbWFpbCI6InZlbmRvckBwbGFuYW0udGVzdCIsInJvbGUiOiJWRU5ET1IiLCJpYXQiOjE3OTEwMjEyNjMsImV4cCI6MTc5MTYyNjA2M30.SyKZqvUAXIFfXw3R5c8p9_CzkOoJmu-Y4V_mB3kLGYk
+order: 3031596990981546

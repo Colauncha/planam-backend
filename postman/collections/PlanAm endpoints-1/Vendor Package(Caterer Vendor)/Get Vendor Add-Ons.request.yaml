@@ -1,0 +1,5 @@
+$kind: http-request
+description: ""
+url: "{{url}}/vendors/7ec059dd-868b-4f24-bf9a-aa9bd0dad308/add-ons"
+method: GET
+order: 4500522700774725

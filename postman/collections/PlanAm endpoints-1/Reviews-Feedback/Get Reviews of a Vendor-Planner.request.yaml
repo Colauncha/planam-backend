@@ -1,0 +1,6 @@
+$kind: http-request
+name: Get Reviews of a Vendor/Planner
+description: ""
+url: "{{url}}/vendors/53db4eb1-e290-4578-ac66-06adcdd39d4e/reviews"
+method: GET
+order: 4477846378466827

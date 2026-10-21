@@ -1,0 +1,29 @@
+$kind: http-request
+name: Upload Files(image/pdf) To A Conversation(Host/Vendor)
+description: ""
+url: "{{url}}/conversations/files"
+method: POST
+body:
+  type: formdata
+  content:
+    - type: text
+      key: conversationId
+      value: bf4ddad6-eb84-4f5a-9e28-080c71f99d38
+      description: ""
+      disabled: false
+    - type: text
+      key: type
+      value: IMAGE
+      description: ""
+      disabled: false
+    - type: file
+      key: file
+      src:
+        - /C:/Users/OGKpos/Videos/XenderDownload/image/cover/0afa8ee8-e567-4d75-bc62-a30eeb1c6518_audio.png
+      description: ""
+      disabled: false
+auth:
+  type: bearer
+  credentials:
+    token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIyM2QzMzc4YS1jYzAwLTRkM2YtOTAzNS1mNmRjN2RmYjEzYmQiLCJlbWFpbCI6Imhvc3RAcGxhbmFtLnRlc3QiLCJyb2xlIjoiSE9TVCIsImlhdCI6MTc5MTI5MDk4MSwiZXhwIjoxNzkxODk1NzgxfQ.TbqmmQGePP8zzmZfRiJcVnpJeSftEyIfmz4ZCige9ag
+order: 4503396993177609

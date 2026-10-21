@@ -1,0 +1,13 @@
+$kind: http-request
+name: Report A Conversation(Host/Vendor)
+description: ""
+url: "{{url}}/conversations/bf4ddad6-eb84-4f5a-9e28-080c71f99d38/report"
+method: POST
+body:
+  type: json
+  content: '{"reason": "Inappropriate content"}'
+auth:
+  type: bearer
+  credentials:
+    token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIyM2QzMzc4YS1jYzAwLTRkM2YtOTAzNS1mNmRjN2RmYjEzYmQiLCJlbWFpbCI6Imhvc3RAcGxhbmFtLnRlc3QiLCJyb2xlIjoiSE9TVCIsImlhdCI6MTc5MTI5MDk4MSwiZXhwIjoxNzkxODk1NzgxfQ.TbqmmQGePP8zzmZfRiJcVnpJeSftEyIfmz4ZCige9ag
+order: 4502904511893187

@@ -1,0 +1,10 @@
+$kind: http-request
+name: Delete Booking From Calendar(Host/Vendor)
+description: ""
+url: "{{url}}/bookings/6de5280f-0b5b-4379-852c-6a20f99e5244/calendar"
+method: DELETE
+auth:
+  type: bearer
+  credentials:
+    token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhOGZhNDdlMy05Yzk4LTQ2ZTktOWVlMC02ZWU1M2FlMTdmNWUiLCJlbWFpbCI6Imhvc3QyQGdtYWlsLmNvbSIsInJvbGUiOiJIT1NUIiwiaWF0IjoxNzkxODY5NTIyLCJleHAiOjE3OTI0NzQzMjJ9.Z-t0FdGsTsLJkLBRjYnmVDQxQ75mgpxb9ITX8sYtNvQ
+order: 4503599621098187

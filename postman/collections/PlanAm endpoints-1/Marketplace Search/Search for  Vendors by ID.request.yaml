@@ -1,0 +1,5 @@
+$kind: http-request
+description: ""
+url: "{{url}}/vendors/53db4eb1-e290-4578-ac66-06adcdd39d4e"
+method: GET
+order: 4457437055701238

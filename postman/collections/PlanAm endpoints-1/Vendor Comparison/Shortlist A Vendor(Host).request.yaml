@@ -1,0 +1,16 @@
+$kind: http-request
+description: ""
+url: "{{url}}/events/086de2b6-3c1e-441b-9bfa-14119e25a50f/shortlist"
+method: POST
+body:
+  type: json
+  content: "{\r
+
+    \  \"vendorProfileId\": \"36b70f2b-6a4f-4c99-afeb-d76993fc3572\"\r
+
+    }"
+auth:
+  type: bearer
+  credentials:
+    token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIyM2QzMzc4YS1jYzAwLTRkM2YtOTAzNS1mNmRjN2RmYjEzYmQiLCJlbWFpbCI6Imhvc3RAb3V0bG9vay5jb20iLCJyb2xlIjoiSE9TVCIsImlhdCI6MTc5MTU3MTUyMywiZXhwIjoxNzkyMTc2MzIzfQ.3-1hVwdJ1geINrHTuyvPeUzahnfaWtg7TNuPxv52mXE
+order: 3000

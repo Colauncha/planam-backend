@@ -1,0 +1,9 @@
+$kind: http-request
+description: ""
+url: "{{url}}/bookings/2f944cae-ec6d-46eb-8686-1c2856d2bd53/additional-charges/01166138-fdc6-43c3-a40f-ff7195f44a59"
+method: DELETE
+auth:
+  type: bearer
+  credentials:
+    token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJmNDIzYTc3NC0yZjFmLTQwNGUtOWQxMC1iZGRlNTdlOTAxMjUiLCJlbWFpbCI6InZlbmRvcjJAcGxhbmFtLnRlc3QiLCJyb2xlIjoiVkVORE9SIiwiaWF0IjoxNzkxODExNDk2LCJleHAiOjE3OTI0MTYyOTZ9.soCdqK23k5FXGo9B4skh6Z9I_tEJh3t5GkQmL91C318
+order: 4503599621096187

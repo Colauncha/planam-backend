@@ -1,0 +1,13 @@
+$kind: http-request
+name: Create invoice of confirmed booking(VENDOR/PLANNER)
+description: ""
+url: "{{url}}/bookings/81f866df-d47e-4b7b-8c6e-4255964d8e25/invoices"
+method: POST
+body:
+  type: json
+  content: '{ "type": "DEPOSIT", "amount": 14000, "dueDate": "2026-11-01" }'
+auth:
+  type: bearer
+  credentials:
+    token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJjN2RiMGY4MS1jNGMzLTQwN2YtOGFiOC0yZTU2OGVmMDFiMTYiLCJlbWFpbCI6InZlbmRvcjNAcGxhbmFtLmNvbSIsInJvbGUiOiJWRU5ET1IiLCJpYXQiOjE3ODk3MDg2ODgsImV4cCI6MTc5MDMxMzQ4OH0.jOfyEm-92hpOWRJxpZ2WV7FmPqDiJZ7HsVNZmxpYk2k
+order: 2568044862562667

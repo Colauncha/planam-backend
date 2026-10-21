@@ -1,0 +1,8 @@
+$kind: http-request
+description: ""
+url: "{{url}}/invitations/0fd766005a66/reviews"
+method: POST
+body:
+  type: json
+  content: '{"vendorProfileId": "53db4eb1-e290-4578-ac66-06adcdd39d4e", "rating": 5, "comment": "The photography is magic!"}'
+order: 962274038042225

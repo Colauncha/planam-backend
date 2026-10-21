@@ -1,0 +1,10 @@
+$kind: http-request
+name: Get Users General Settings(Host/Vendor)
+description: ""
+url: "{{url}}/users/me/settings/general"
+method: GET
+auth:
+  type: bearer
+  credentials:
+    token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIwNDRjYzc0ZS01NGE5LTQwOTItODE4NC0yZTQ2MzE5NTYwYzQiLCJlbWFpbCI6InZlbmRvckBwbGFuYW0udGVzdCIsInJvbGUiOiJWRU5ET1IiLCJpYXQiOjE3OTEwMjA5OTYsImV4cCI6MTc5MTYyNTc5Nn0.zLvUc_izlOFsovT23ziMk2IdbEWEs_4dLX6cjkJElSg
+order: 2370146627621369

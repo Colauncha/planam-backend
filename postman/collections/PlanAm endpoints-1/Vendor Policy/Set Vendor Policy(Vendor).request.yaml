@@ -1,0 +1,24 @@
+$kind: http-request
+description: ""
+url: "{{url}}/vendors/me/policy"
+method: PUT
+body:
+  type: json
+  content: "{\r
+
+    \  \"depositPercent\": 40,\r
+
+    \  \"fullRefundDaysBefore\": 60,\r
+
+    \  \"lateCancelDaysBefore\": 21,\r
+
+    \  \"lateCancelPercentDue\": 75,\r
+
+    \  \"terms\": \"Deposit is non-refundable. Menu changes must be confirmed 30 days before the event.\"\r
+
+    }"
+auth:
+  type: bearer
+  credentials:
+    token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxZDA4NzRlMy1lZDE3LTQ1NDEtOTZmYi0zZWQzNzQzMzkxOWQiLCJlbWFpbCI6InZlbmRvcjRAcGxhbmFtLnRlc3QiLCJyb2xlIjoiVkVORE9SIiwiaWF0IjoxNzkxODY5ODU1LCJleHAiOjE3OTI0NzQ2NTV9._ojQ0PcJH9qhXD7NHb4D7Z9xF1Ojc4Ii_ckIxSGIojc
+order: 4000

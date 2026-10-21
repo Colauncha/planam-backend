@@ -1,0 +1,10 @@
+$kind: http-request
+name: Get Booking Add-On Selection(Vendor/Host)
+description: ""
+url: "{{url}}/bookings/41f35c13-ad11-438b-a0f3-80276ea3ae72/add-on-selections"
+method: GET
+auth:
+  type: bearer
+  credentials:
+    token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJjN2RiMGY4MS1jNGMzLTQwN2YtOGFiOC0yZTU2OGVmMDFiMTYiLCJlbWFpbCI6InZlbmRvcjNAcGxhbmFtLmNvbSIsInJvbGUiOiJWRU5ET1IiLCJpYXQiOjE3OTA0MTk1MDksImV4cCI6MTc5MTAyNDMwOX0._eax7AMMsSOOE_TCPLxBJ9RiVhDan_19YHsBEbhN014
+order: 4474683428927137

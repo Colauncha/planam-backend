@@ -1,0 +1,5 @@
+$kind: http-request
+description: ""
+url: "{{url}}/vendors/e8cddb5c-42f5-4a79-8091-7535351b585e/policy"
+method: GET
+order: 5000

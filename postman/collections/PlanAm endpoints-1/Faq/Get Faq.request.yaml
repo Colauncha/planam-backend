@@ -1,0 +1,5 @@
+$kind: http-request
+description: You can filter by category
+url: "{{url}}/support/faqs"
+method: GET
+order: 2660372554954719

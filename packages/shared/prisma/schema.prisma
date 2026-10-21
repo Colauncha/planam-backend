@@ -5,51 +5,136 @@
 // Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
 
 generator client {
-  provider = "prisma-client"
-  output   = "../src/generated/prisma"
+  provider     = "prisma-client"
+  output       = "../src/generated/prisma"
   moduleFormat = "cjs"
 }
 
 datasource db {
   provider = "postgresql"
-   url      = env("DATABASE_URL")
+  url      = env("DATABASE_URL")
 }
 
-
 model User {
-  id        String   @id @default(uuid())
-  email     String   @unique
-  password  String
-  fullName  String
-  phone     String?
-  role      Role     @default(ATTENDEE)
-  isEmailVerified Boolean @default(false)
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  id              String   @id @default(uuid())
+  email           String   @unique
+  password        String
+  fullName        String
+  phone           String?
+  role            Role     @default(ATTENDEE)
+  isEmailVerified Boolean  @default(false)
+  avatarUrl       String?
+  language        String   @default("en")
+  recoveryEmail   String?
+  recoveryPhone   String?
+  isActive        Boolean  @default(true)
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
 
   vendorProfile VendorProfile?
 
   events Event[]
 
+  conversationMemberships ConversationMember[]
+  sentMessages            Message[]
+
+  uploadedMedia Media[]
+
+  authoredReviews Review[]
+
+  notifications Notification[]
+
+  bookingNotes BookingNote[]
+
+  calendarEvents CalendarEvent[]
+  tasks          Task[]
+
+  taskLists            TaskList[]
+  availabilitySettings AvailabilitySettings?
+
+  notificationPreferences NotificationPreferences?
+
+  supportTickets   SupportTicket[]
+  platformFeedback PlatformFeedback[]
+  subscription     Subscription?
+
+  conversationReports ConversationReport[]
+
   @@map("users")
 }
 
+
 model VendorProfile {
-  id           String        @id @default(uuid())
-  userId       String        @unique
-  user         User          @relation(fields: [userId], references: [id], onDelete: Cascade)
-  businessName String
-  category     VendorCategory
-  bio          String?
-  location     String?
-  isVerified   Boolean       @default(false)
-  createdAt    DateTime      @default(now())
-  updatedAt    DateTime      @updatedAt
+  id                  String           @id @default(uuid())
+  userId              String           @unique
+  user                User             @relation(fields: [userId], references: [id], onDelete: Cascade)
+  businessName        String
+  category            VendorCategory
+  bio                 String?
+  yearsOfExperience   String?
+  serviceAreas        String[]
+  serviceType         String?
+  pricingStructure    PricingStructure @default(FIXED_PACKAGE)
+  minPrice            Decimal?         @db.Money
+  maxPrice            Decimal?         @db.Money
+  pastEventTypes      PastEventType[]
+  country             String?
+  state               String?
+  teamSize            String?
+  isAcceptingBookings Boolean          @default(true)
+  isVerified          Boolean          @default(false)
+  businessAddress     String?
+  zipCode             String?
+  createdAt           DateTime         @default(now())
+  updatedAt           DateTime         @updatedAt
+
+  leads    Lead[]
+  bookings Booking[]
+
+  availability VendorAvailability[]
+
+  reviews Review[]
+
+  portfolioMedia VendorPortfolioMedia[]
+
+  packages  VendorPackage[]
+  menuItems MenuItem[]
+  addOns    VendorAddOn[]
+
+  shortlistedIn ShortlistedVendor[]
+  policy        VendorPolicy?
+  teamItems BookingGroupItem[]
 
   @@map("vendor_profiles")
 }
 
+model VendorPortfolioMedia {
+  id              String        @id @default(uuid())
+  vendorProfileId String
+  vendorProfile   VendorProfile @relation(fields: [vendorProfileId], references: [id], onDelete: Cascade)
+  url             String
+  caption         String?
+  publicId        String
+  createdAt       DateTime      @default(now())
 
+  @@map("vendor_portfolio_media")
+}
+
+enum PricingStructure {
+  FIXED_PACKAGE
+  PER_HOUR
+  PER_GUEST
+  CUSTOM_QUOTE
+}
+
+enum PastEventType {
+  WEDDING
+  BIRTHDAY
+  CORPORATE_EVENT
+  CONCERT_PERFORMANCE
+  RELIGIOUS_EVENTS
+  OTHER
+}
 
 enum Role {
   HOST
@@ -69,20 +154,42 @@ enum VendorCategory {
   OTHER
 }
 
-model Event{
-  id           String      @id @default(uuid())
-  hostId       String
-  host         User        @relation(fields: [hostId], references: [id], onDelete: Cascade)
-  title        String
-  description  String?
-  eventType    EventType
-  status       EventStatus @default(DRAFT)
-  eventDate    DateTime
-  location     String?
-  guestCapacity Int?
-  budget       Decimal?    @db.Money
-  createdAt    DateTime    @default(now())
-  updatedAt    DateTime    @updatedAt
+model Event {
+  id              String      @id @default(uuid())
+  hostId          String
+  host            User        @relation(fields: [hostId], references: [id], onDelete: Cascade)
+  title           String
+  description     String?
+  eventType       EventType
+  status          EventStatus @default(DRAFT)
+  eventDate       DateTime
+  location        String?
+  guestCapacity   Int?
+  budget          Decimal?    @db.Money
+  dressCode       String?
+  suggestedColors String[]
+  rsvpDeadline    DateTime?
+  createdAt       DateTime    @default(now())
+  updatedAt       DateTime    @updatedAt
+
+  leads    Lead[]
+  bookings Booking[]
+
+  messages Message[]
+
+  guests Guest[]
+
+  media Media[]
+
+  reviews Review[]
+
+  sessions EventSession[]
+
+  conversations Conversation[]
+
+    budgetAllocations EventBudgetAllocation[]
+  shortlist         ShortlistedVendor[]
+  bookingGroups     BookingGroup[]
 
   @@map("events")
 }
@@ -101,4 +208,1010 @@ enum EventStatus {
   CONFIRMED
   COMPLETED
   CANCELLED
+}
+
+model Lead {
+  id              String        @id @default(uuid())
+  eventId         String
+  event           Event         @relation(fields: [eventId], references: [id], onDelete: Cascade)
+  vendorProfileId String
+  vendorProfile   VendorProfile @relation(fields: [vendorProfileId], references: [id], onDelete: Cascade)
+  status          LeadStatus    @default(PENDING)
+  message         String?
+  viewedAt        DateTime?
+  createdAt       DateTime      @default(now())
+  updatedAt       DateTime      @updatedAt
+
+  quotation Quotation?
+
+  @@map("leads")
+}
+
+model Quotation {
+  id              String          @id @default(uuid())
+  leadId          String          @unique
+  lead            Lead            @relation(fields: [leadId], references: [id], onDelete: Cascade)
+  packageId       String?
+  package         VendorPackage?  @relation(fields: [packageId], references: [id])
+  lineItems       Json
+  subtotal        Decimal         @db.Money
+  taxRate         Decimal         @default(0) @db.Decimal(5, 2)
+  taxAmount       Decimal         @default(0) @db.Money
+  totalAmount     Decimal         @db.Money
+  terms           String?
+  revisionMessage String?
+  status          QuotationStatus @default(DRAFT)
+  version         Int             @default(1)
+  expiresAt       DateTime?
+  createdAt       DateTime        @default(now())
+  updatedAt       DateTime        @updatedAt
+
+  booking      Booking?
+  activityLogs QuotationActivityLog[]
+
+  sentAt   DateTime?
+  versions QuotationVersion[]
+
+  @@map("quotations")
+}
+
+model QuotationActivityLog {
+  id          String                @id @default(uuid())
+  quotationId String
+  quotation   Quotation             @relation(fields: [quotationId], references: [id], onDelete: Cascade)
+  type        QuotationActivityType
+  description String
+  actor       ActivityActor         @default(SYSTEM)
+  createdAt   DateTime              @default(now())
+
+  @@map("quotation_activity_logs")
+}
+
+enum QuotationActivityType {
+  CREATED
+  SENT
+  REVISED
+  ACCEPTED
+  REJECTED
+  NEGOTIATION_REQUESTED
+  EXPIRED
+  GUEST_COUNT_CHANGED
+}
+
+enum ActivityActor {
+  VENDOR
+  HOST
+  AI
+  SYSTEM
+}
+
+model QuotationVersion {
+  id              String    @id @default(uuid())
+  quotationId     String
+  quotation       Quotation @relation(fields: [quotationId], references: [id], onDelete: Cascade)
+  version         Int
+  packageId       String?
+  lineItems       Json
+  subtotal        Decimal   @db.Money
+  taxRate         Decimal   @db.Decimal(5, 2)
+  taxAmount       Decimal   @db.Money
+  totalAmount     Decimal   @db.Money
+  terms           String?
+  revisionMessage String?
+  createdAt       DateTime  @default(now())
+
+  @@unique([quotationId, version])
+  @@map("quotation_versions")
+}
+
+model Booking {
+  id                   String         @id @default(uuid())
+  eventId              String
+  event                Event          @relation(fields: [eventId], references: [id], onDelete: Cascade)
+  vendorProfileId      String
+  vendorProfile        VendorProfile  @relation(fields: [vendorProfileId], references: [id], onDelete: Cascade)
+  quotationId          String         @unique
+  quotation            Quotation      @relation(fields: [quotationId], references: [id], onDelete: Cascade)
+  confirmedAmount      Decimal        @db.Money
+  status               BookingStatus  @default(CONFIRMED)
+  packageId            String?
+  package              VendorPackage? @relation(fields: [packageId], references: [id])
+  guestCount           Int?
+  venue                String?
+  serviceDurationHours Int?
+  createdAt            DateTime       @default(now())
+
+  invoices Invoice[]
+
+  menuSelections  BookingMenuSelection[]
+  addOnSelections BookingAddOnSelection[]
+  timelineEvents  BookingTimelineEvent[]
+  notes           BookingNote[]
+
+  source          BookingSource      @default(QUOTATION)
+  serviceFee      Decimal?           @db.Money
+  termsAcceptedAt DateTime?
+  bookingGroupId  String?
+  bookingGroup    BookingGroup?      @relation(fields: [bookingGroupId], references: [id], onDelete: SetNull)
+  milestones      BookingMilestone[]
+
+  policySnapshot Json?
+  calendarEvents CalendarEvent[]
+
+  cancellation BookingCancellation?
+
+  @@map("bookings")
+}
+
+enum LeadStatus {                                        
+  PENDING
+  ACCEPTED
+  DECLINED
+  CLOSED
+}
+
+enum QuotationStatus {
+  DRAFT
+  PENDING
+  ACCEPTED
+  REJECTED
+  NEGOTIATION
+  EXPIRED
+}
+
+enum BookingStatus {
+  CONFIRMED
+  PREPARING
+  READY_FOR_EVENT
+  IN_PROGRESS
+  CANCELLED
+  COMPLETED
+}
+
+model VendorAvailability {
+  id              String        @id @default(uuid())
+  vendorProfileId String
+  vendorProfile   VendorProfile @relation(fields: [vendorProfileId], references: [id], onDelete: Cascade)
+  date            DateTime      @db.Date
+  isBlocked       Boolean       @default(false)
+
+  @@unique([vendorProfileId, date])
+  @@map("vendor_availability")
+}
+
+model Invoice {
+  id               String            @id @default(uuid())
+  bookingId        String
+  booking          Booking           @relation(fields: [bookingId], references: [id], onDelete: Cascade)
+  invoiceNumber    String            @unique
+  type             InvoiceType
+  subtotal         Decimal           @db.Money
+  taxRate          Decimal           @default(0) @db.Decimal(5, 2)
+  taxAmount        Decimal           @default(0) @db.Money
+  amount           Decimal           @db.Money
+  lineItems        Json?
+  issueDate        DateTime          @default(now())
+  dueDate          DateTime?
+  balanceDueTiming BalanceDueTiming?
+  currency         String            @default("NGN")
+  note             String?
+  status           InvoiceStatus     @default(PENDING)
+  createdAt        DateTime          @default(now())
+  updatedAt        DateTime          @updatedAt
+
+  payments Payment[]
+
+  @@map("invoices")
+}
+
+enum BalanceDueTiming {
+  IMMEDIATELY_AFTER_SERVICE
+  BEFORE_EVENT
+  ON_DUE_DATE
+  CUSTOM_DATE
+}
+
+model Payment {
+  id                String        @id @default(uuid())
+  invoiceId         String
+  invoice           Invoice       @relation(fields: [invoiceId], references: [id], onDelete: Cascade)
+  amount            Decimal       @db.Money
+  paystackReference String        @unique
+  status            PaymentStatus @default(PENDING)
+  paidAt            DateTime?
+  createdAt         DateTime      @default(now())
+
+  refund Refund?
+
+  @@map("payments")
+}
+
+enum InvoiceType {
+  DEPOSIT
+  BALANCE
+  FULL
+  ADDITIONAL
+  CANCELLATION
+}
+
+enum InvoiceStatus {
+  PENDING
+  PAID
+  OVERDUE
+  CANCELLED
+}
+
+enum PaymentStatus {
+  PENDING
+  SUCCESS
+  FAILED
+}
+
+model Guest {
+  id             String     @id @default(uuid())
+  eventId        String
+  event          Event      @relation(fields: [eventId], references: [id], onDelete: Cascade)
+  fullName       String
+  email          String?
+  phone          String?
+  ticketCode     String     @unique
+  rsvpStatus     RsvpStatus @default(PENDING)
+  seatingHall    String?
+  tableNumber    String?
+  seatNumber     String?
+  plusOneAllowed Boolean    @default(false)
+  plusOneName    String?
+  invitedAt      DateTime   @default(now())
+  respondedAt    DateTime?
+
+  reviews Review[]
+
+  @@map("guests")
+}
+
+enum RsvpStatus {
+  PENDING
+  ACCEPTED
+  DECLINED
+}
+
+model Media {
+  id         String    @id @default(uuid())
+  eventId    String
+  event      Event     @relation(fields: [eventId], references: [id], onDelete: Cascade)
+  uploaderId String
+  uploader   User      @relation(fields: [uploaderId], references: [id], onDelete: Cascade)
+  type       MediaType
+  url        String
+  publicId   String
+  caption    String?
+  createdAt  DateTime  @default(now())
+
+  @@map("media")
+}
+
+enum MediaType {
+  PHOTO
+  VIDEO
+}
+
+model Review {
+  id              String         @id @default(uuid())
+  eventId         String?
+  event           Event?         @relation(fields: [eventId], references: [id], onDelete: Cascade)
+  vendorProfileId String?
+  vendorProfile   VendorProfile? @relation(fields: [vendorProfileId], references: [id], onDelete: Cascade)
+  guestId         String?
+  guest           Guest?         @relation(fields: [guestId], references: [id], onDelete: Cascade)
+  authorUserId    String?
+  authorUser      User?          @relation(fields: [authorUserId], references: [id], onDelete: Cascade)
+  authorName      String?
+  authorEmail     String?
+  rating          Int
+  comment         String?
+  vendorResponse  String?
+  createdAt       DateTime       @default(now())
+
+  @@map("reviews")
+}
+
+model Notification {
+  id        String           @id @default(uuid())
+  userId    String
+  user      User             @relation(fields: [userId], references: [id], onDelete: Cascade)
+  type      NotificationType
+  title     String
+  body      String?
+  metadata  Json?
+  isRead    Boolean          @default(false)
+  createdAt DateTime         @default(now())
+
+  @@map("notifications")
+}
+
+enum NotificationType {
+  NEW_LEAD
+  LEAD_RESPONSE
+  QUOTATION_RECEIVED
+  QUOTATION_RESPONSE
+  BOOKING_CONFIRMED
+  NEW_MESSAGE
+  RSVP_RECEIVED
+  REVIEW_RECEIVED
+  PAYMENT_RECEIVED
+  INVOICE_CREATED
+  BOOKING_CANCELLED
+  REFUND_UPDATE
+}
+
+model VendorPackage {
+  id                   String        @id @default(uuid())
+  vendorProfileId      String
+  vendorProfile        VendorProfile @relation(fields: [vendorProfileId], references: [id], onDelete: Cascade)
+  name                 String
+  description          String?
+  serviceDurationHours Int?
+  guestCapacity        Int?
+  includes             String[]
+  basePrice            Decimal       @db.Money
+  createdAt            DateTime      @default(now())
+  updatedAt            DateTime      @updatedAt
+
+  bookings Booking[]
+
+  quotations Quotation[]
+
+  menuItems PackageMenuItem[]
+
+  pricingType      PricingType @default(FLAT)
+  negotiablePrice  Decimal?    @db.Money
+  imageUrl         String?
+
+
+  teamItems BookingGroupItem[]
+  @@map("vendor_packages")
+}
+
+model MenuItem {
+  id              String        @id @default(uuid())
+  vendorProfileId String
+  vendorProfile   VendorProfile @relation(fields: [vendorProfileId], references: [id], onDelete: Cascade)
+  category        MenuCategory
+  name            String
+  createdAt       DateTime      @default(now())
+
+  bookingSelections BookingMenuSelection[]
+
+  packageSelections PackageMenuItem[]
+
+  @@map("menu_items")
+}
+
+model VendorAddOn {
+  id              String        @id @default(uuid())
+  vendorProfileId String
+  vendorProfile   VendorProfile @relation(fields: [vendorProfileId], references: [id], onDelete: Cascade)
+  name            String
+  price           Decimal       @db.Money
+  createdAt       DateTime      @default(now())
+
+  bookingSelections BookingAddOnSelection[]
+
+  description String?
+  pricingType PricingType @default(FLAT)
+
+  @@map("vendor_add_ons")
+}
+
+enum MenuCategory {
+  PROTEIN
+  APPETIZER
+  MAIN_DISH
+  SIDE
+  DESSERT
+}
+
+model BookingMenuSelection {
+  id         String   @id @default(uuid())
+  bookingId  String
+  booking    Booking  @relation(fields: [bookingId], references: [id], onDelete: Cascade)
+  menuItemId String
+  menuItem   MenuItem @relation(fields: [menuItemId], references: [id], onDelete: Cascade)
+  createdAt  DateTime @default(now())
+
+  @@unique([bookingId, menuItemId])
+  @@map("booking_menu_selections")
+}
+
+model BookingAddOnSelection {
+  id            String      @id @default(uuid())
+  bookingId     String
+  booking       Booking     @relation(fields: [bookingId], references: [id], onDelete: Cascade)
+  vendorAddOnId String
+  vendorAddOn   VendorAddOn @relation(fields: [vendorAddOnId], references: [id], onDelete: Cascade)
+  createdAt     DateTime    @default(now())
+
+  @@unique([bookingId, vendorAddOnId])
+
+    quantity  Int      @default(1)
+  unitPrice Decimal? @db.Money
+
+  @@map("booking_add_on_selections")
+}
+
+model BookingTimelineEvent {
+  id        String   @id @default(uuid())
+  bookingId String
+  booking   Booking  @relation(fields: [bookingId], references: [id], onDelete: Cascade)
+  label     String
+  time      String
+  order     Int
+  createdAt DateTime @default(now())
+
+  @@map("booking_timeline_events")
+}
+
+model BookingNote {
+  id           String   @id @default(uuid())
+  bookingId    String
+  booking      Booking  @relation(fields: [bookingId], references: [id], onDelete: Cascade)
+  authorUserId String
+  authorUser   User     @relation(fields: [authorUserId], references: [id], onDelete: Cascade)
+  type         NoteType
+  content      String
+  createdAt    DateTime @default(now())
+
+  @@map("booking_notes")
+}
+
+enum NoteType {
+  INTERNAL
+  SPECIAL_REQUEST
+}
+
+model CalendarEvent {
+  id          String     @id @default(uuid())
+  userId      String
+  user        User       @relation(fields: [userId], references: [id], onDelete: Cascade)
+  title       String
+  description String?
+  location    String?
+  startTime   DateTime
+  endTime     DateTime
+  allDay      Boolean    @default(false)
+  busyStatus  BusyStatus @default(BUSY)
+  reminders   Int[] // minutes before startTime, e.g. [30, 1440]
+  createdAt   DateTime   @default(now())
+  updatedAt   DateTime   @updatedAt
+
+  bookingId String?
+  booking   Booking? @relation(fields: [bookingId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, bookingId])
+
+  @@map("calendar_events")
+}
+
+model Task {
+  id          String       @id @default(uuid())
+  userId      String
+  user        User         @relation(fields: [userId], references: [id], onDelete: Cascade)
+  listId      String
+  list        TaskList     @relation(fields: [listId], references: [id], onDelete: Cascade)
+  title       String
+  description String?
+  deadline    DateTime?
+  startTime   DateTime?
+  endTime     DateTime?
+  priority    TaskPriority @default(MEDIUM)
+  isCompleted Boolean      @default(false)
+  createdAt   DateTime     @default(now())
+  updatedAt   DateTime     @updatedAt
+
+  subtasks TaskSubtask[]
+
+  @@map("tasks")
+}
+
+enum BusyStatus {
+  BUSY
+  FREE
+}
+
+enum TaskPriority {
+  LOW
+  MEDIUM
+  HIGH
+}
+
+model TaskList {
+  id        String   @id @default(uuid())
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  name      String
+  createdAt DateTime @default(now())
+
+  tasks Task[]
+
+  @@unique([userId, name])
+  @@map("task_lists")
+}
+
+model TaskSubtask {
+  id          String   @id @default(uuid())
+  taskId      String
+  task        Task     @relation(fields: [taskId], references: [id], onDelete: Cascade)
+  title       String
+  isCompleted Boolean  @default(false)
+  createdAt   DateTime @default(now())
+
+  @@map("task_subtasks")
+}
+
+model AvailabilitySettings {
+  id       String @id @default(uuid())
+  userId   String @unique
+  user     User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+  timeZone String @default("Africa/Lagos")
+
+  days WeeklyAvailabilityDay[]
+
+  @@map("availability_settings")
+}
+
+model WeeklyAvailabilityDay {
+  id         String               @id @default(uuid())
+  settingsId String
+  settings   AvailabilitySettings @relation(fields: [settingsId], references: [id], onDelete: Cascade)
+  dayOfWeek  Int // 0 = Sunday ... 6 = Saturday
+  isActive   Boolean              @default(true)
+  ranges     Json // [{ "start": "21:00", "end": "22:00" }, ...]
+
+  @@unique([settingsId, dayOfWeek])
+  @@map("weekly_availability_days")
+}
+
+model PackageMenuItem {
+  id         String        @id @default(uuid())
+  packageId  String
+  package    VendorPackage @relation(fields: [packageId], references: [id], onDelete: Cascade)
+  menuItemId String
+  menuItem   MenuItem      @relation(fields: [menuItemId], references: [id], onDelete: Cascade)
+
+  @@unique([packageId, menuItemId])
+  @@map("package_menu_items")
+}
+
+model NotificationPreferences {
+  id                String  @id @default(uuid())
+  userId            String  @unique
+  user              User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+  newBookingAlerts  Boolean @default(true)
+  paymentAlerts     Boolean @default(true)
+  messageAlerts     Boolean @default(true)
+  eventReminders    Boolean @default(true)
+  marketingEmails   Boolean @default(true)
+  pushNotifications Boolean @default(true)
+
+  @@map("notification_preferences")
+}
+
+model SupportTicket {
+  id           String              @id @default(uuid())
+  userId       String
+  user         User                @relation(fields: [userId], references: [id], onDelete: Cascade)
+  ticketNumber String              @unique
+  subject      String
+  status       SupportTicketStatus @default(SENT)
+  createdAt    DateTime            @default(now())
+  updatedAt    DateTime            @updatedAt
+
+  messages SupportMessage[]
+
+  @@map("support_tickets")
+}
+
+model SupportMessage {
+  id         String            @id @default(uuid())
+  ticketId   String
+  ticket     SupportTicket     @relation(fields: [ticketId], references: [id], onDelete: Cascade)
+  senderType SupportSenderType
+  content    String
+  createdAt  DateTime          @default(now())
+
+  @@map("support_messages")
+}
+
+model Faq {
+  id        String   @id @default(uuid())
+  question  String
+  answer    String
+  category  String?
+  order     Int      @default(0)
+  createdAt DateTime @default(now())
+
+  @@map("faqs")
+}
+
+model PlatformFeedback {
+  id        String   @id @default(uuid())
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  rating    Int
+  comment   String?
+  createdAt DateTime @default(now())
+
+  @@map("platform_feedback")
+}
+
+model Subscription {
+  id                   String             @id @default(uuid())
+  userId               String             @unique
+  user                 User               @relation(fields: [userId], references: [id], onDelete: Cascade)
+  plan                 SubscriptionPlan   @default(FREE)
+  status               SubscriptionStatus @default(ACTIVE)
+  paystackCustomerCode String?
+  paystackSubCode      String?
+  renewsAt             DateTime?
+  createdAt            DateTime           @default(now())
+  updatedAt            DateTime           @updatedAt
+
+  @@map("subscriptions")
+}
+
+enum SupportTicketStatus {
+  SENT
+  IN_PROGRESS
+  RESOLVED
+}
+
+enum SupportSenderType {
+  USER
+  SUPPORT
+}
+
+enum SubscriptionPlan {
+  FREE
+  PREMIUM
+}
+
+enum SubscriptionStatus {
+  ACTIVE
+  PAST_DUE
+  CANCELLED
+}
+
+model EventSession {
+  id        String           @id @default(uuid())
+  eventId   String
+  event     Event            @relation(fields: [eventId], references: [id], onDelete: Cascade)
+  type      EventSessionType
+  venueName String?
+  address   String?
+  startTime DateTime
+  createdAt DateTime         @default(now())
+
+  @@map("event_sessions")
+}
+
+enum EventSessionType {
+  CEREMONY
+  RECEPTION
+  OTHER
+}
+
+model Conversation {
+  id        String           @id @default(uuid())
+  type      ConversationType
+  name      String?
+  eventId   String?
+  event     Event?           @relation(fields: [eventId], references: [id], onDelete: SetNull)
+  createdAt DateTime         @default(now())
+  updatedAt DateTime         @updatedAt
+
+  members  ConversationMember[]
+  messages Message[]
+  calls    Call[]
+
+  reports ConversationReport[]
+
+  @@map("conversations")
+}
+
+model ConversationMember {
+  id             String       @id @default(uuid())
+  conversationId String
+  conversation   Conversation @relation(fields: [conversationId], references: [id], onDelete: Cascade)
+  userId         String
+  user           User         @relation(fields: [userId], references: [id], onDelete: Cascade)
+  displayRole    String?
+  isFacilitator  Boolean      @default(false)
+  isPinned       Boolean      @default(false)
+  isMuted        Boolean      @default(false)
+  isDeleted      Boolean      @default(false)
+  markedUnread   Boolean      @default(false)
+  lastReadAt     DateTime?
+  joinedAt       DateTime     @default(now())
+
+  @@unique([conversationId, userId])
+  @@map("conversation_members")
+}
+
+model Message {
+  id             String       @id @default(uuid())
+  conversationId String
+  conversation   Conversation @relation(fields: [conversationId], references: [id], onDelete: Cascade)
+  senderId       String
+  sender         User         @relation(fields: [senderId], references: [id], onDelete: Cascade)
+  content        String?
+  createdAt      DateTime     @default(now())
+
+  attachments MessageAttachment[]
+  event       Event?              @relation(fields: [eventId], references: [id])
+  eventId     String?
+
+  @@map("messages")
+}
+
+model MessageAttachment {
+  id        String         @id @default(uuid())
+  messageId String
+  message   Message        @relation(fields: [messageId], references: [id], onDelete: Cascade)
+  type      AttachmentType
+  url       String
+  fileName  String?
+  fileSize  Int?
+  mimeType  String?
+  createdAt DateTime       @default(now())
+
+  @@map("message_attachments")
+}
+
+model Call {
+  id             String       @id @default(uuid())
+  conversationId String
+  conversation   Conversation @relation(fields: [conversationId], references: [id], onDelete: Cascade)
+  initiatorId    String
+  status         CallStatus   @default(RINGING)
+  startedAt      DateTime     @default(now())
+  endedAt        DateTime?
+
+  participants CallParticipant[]
+
+  @@map("calls")
+}
+
+model CallParticipant {
+  id       String                @id @default(uuid())
+  callId   String
+  call     Call                  @relation(fields: [callId], references: [id], onDelete: Cascade)
+  userId   String
+  status   CallParticipantStatus @default(RINGING)
+  joinedAt DateTime?
+  leftAt   DateTime?
+
+  @@unique([callId, userId])
+  @@map("call_participants")
+}
+
+enum ConversationType {
+  DIRECT
+  GROUP
+}
+
+enum AttachmentType {
+  IMAGE
+  DOCUMENT
+  LINK
+}
+
+enum CallStatus {
+  RINGING
+  ACTIVE
+  ENDED
+  MISSED
+  DECLINED
+}
+
+enum CallParticipantStatus {
+  RINGING
+  JOINED
+  DECLINED
+  LEFT
+}
+
+model ConversationReport {
+  id             String       @id @default(uuid())
+  conversationId String
+  conversation   Conversation @relation(fields: [conversationId], references: [id], onDelete: Cascade)
+  reporterId     String
+  reporter       User         @relation(fields: [reporterId], references: [id], onDelete: Cascade)
+  reason         String
+  status         ReportStatus @default(OPEN)
+  createdAt      DateTime     @default(now())
+
+  @@map("conversation_reports")
+}
+
+enum ReportStatus {
+  OPEN
+  REVIEWED
+  DISMISSED
+}
+
+enum PricingType {
+  FLAT
+  PER_GUEST
+}
+
+enum BookingSource {
+  QUOTATION
+  INSTANT
+}
+
+enum BookingGroupStatus {
+  DRAFT
+  BOOKED
+}
+
+enum MilestoneType {
+  SIGN_AGREEMENT
+  PAY_DEPOSIT
+  FINALIZE_SELECTIONS
+}
+
+enum MilestoneStatus {
+  PENDING
+  COMPLETED
+  OVERDUE
+}
+
+model EventBudgetAllocation {
+  id        String         @id @default(uuid())
+  eventId   String
+  event     Event          @relation(fields: [eventId], references: [id], onDelete: Cascade)
+  category  VendorCategory
+  minAmount Decimal        @db.Money
+  maxAmount Decimal        @db.Money
+
+  @@unique([eventId, category])
+  @@map("event_budget_allocations")
+}
+
+model ShortlistedVendor {
+  id              String         @id @default(uuid())
+  eventId         String
+  event           Event          @relation(fields: [eventId], references: [id], onDelete: Cascade)
+  vendorProfileId String
+  vendorProfile   VendorProfile  @relation(fields: [vendorProfileId], references: [id], onDelete: Cascade)
+  category        VendorCategory
+  createdAt       DateTime       @default(now())
+
+  @@unique([eventId, vendorProfileId])
+  @@map("shortlisted_vendors")
+}
+
+model BookingGroup {
+  id             String             @id @default(uuid())
+  eventId        String
+  event          Event              @relation(fields: [eventId], references: [id], onDelete: Cascade)
+  discountAmount Decimal            @default(0) @db.Money
+  status         BookingGroupStatus @default(DRAFT)
+  createdAt      DateTime           @default(now())
+
+  bookings Booking[]
+  items BookingGroupItem[]
+
+  @@map("booking_groups")
+}
+
+model BookingMilestone {
+  id          String          @id @default(uuid())
+  bookingId   String
+  booking     Booking         @relation(fields: [bookingId], references: [id], onDelete: Cascade)
+  type        MilestoneType
+  title       String
+  dueDate     DateTime?
+  status      MilestoneStatus @default(PENDING)
+  
+  completedAt DateTime?
+
+  @@unique([bookingId, type])
+  @@map("booking_milestones")
+}
+
+model VendorPolicy {
+  id                    String        @id @default(uuid())
+  vendorProfileId       String        @unique
+  vendorProfile         VendorProfile @relation(fields: [vendorProfileId], references: [id], onDelete: Cascade)
+  depositPercent        Int           @default(30)
+  fullRefundDaysBefore  Int           @default(45)
+  lateCancelDaysBefore  Int           @default(30)
+  lateCancelPercentDue  Int           @default(50)
+  terms                 String?
+  midCancelPercentDue Int @default(30)
+
+  @@map("vendor_policies")
+}
+
+enum TeamSlot {
+  CATERING
+  ENTERTAINMENT
+  DECOR
+  PHOTOGRAPHY
+}
+
+model BookingGroupItem {
+  id              String        @id @default(uuid())
+  bookingGroupId  String
+  bookingGroup    BookingGroup  @relation(fields: [bookingGroupId], references: [id], onDelete: Cascade)
+  slot            TeamSlot
+  vendorProfileId String
+  vendorProfile   VendorProfile @relation(fields: [vendorProfileId], references: [id], onDelete: Cascade)
+  packageId       String
+  package         VendorPackage @relation(fields: [packageId], references: [id], onDelete: Cascade)
+  addOns          Json          @default("[]") // [{ vendorAddOnId, quantity }]
+  createdAt       DateTime      @default(now())
+  updatedAt       DateTime      @updatedAt
+
+  @@unique([bookingGroupId, slot])
+  @@map("booking_group_items")
+}
+
+enum CancelledBy {
+  HOST
+  VENDOR
+}
+
+enum CancellationTier {
+  EARLY
+  MID
+  LATE
+  VENDOR_CANCELLED
+}
+
+enum RefundStatus {
+  PENDING
+  PROCESSING
+  NEEDS_ATTENTION
+  PROCESSED
+  FAILED
+}
+
+model BookingCancellation {
+  id                String           @id @default(uuid())
+  bookingId         String           @unique
+  booking           Booking          @relation(fields: [bookingId], references: [id], onDelete: Cascade)
+  cancelledBy       CancelledBy
+  cancelledByUserId String
+  reason            String?
+  tier              CancellationTier
+  daysBeforeEvent   Float
+  policy            Json
+  totalPaid         Decimal          @db.Money
+  amountOwed        Decimal          @db.Money
+  refundAmount      Decimal          @db.Money
+  amountStillDue    Decimal          @db.Money
+  createdAt         DateTime         @default(now())
+
+  refunds Refund[]
+
+  @@map("booking_cancellations")
+}
+
+model Refund {
+  id               String               @id @default(uuid())
+  cancellationId   String?
+  cancellation     BookingCancellation? @relation(fields: [cancellationId], references: [id], onDelete: SetNull)
+  paymentId        String               @unique
+  payment          Payment              @relation(fields: [paymentId], references: [id], onDelete: Cascade)
+  amount           Decimal              @db.Money
+  status           RefundStatus         @default(PENDING)
+  paystackRefundId String?
+  failureReason    String?
+  processedAt      DateTime?
+  createdAt        DateTime             @default(now())
+  updatedAt        DateTime             @updatedAt
+
+  @@map("refunds")
 }

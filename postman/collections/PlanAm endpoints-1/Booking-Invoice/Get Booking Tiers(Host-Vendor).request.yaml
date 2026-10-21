@@ -1,0 +1,10 @@
+$kind: http-request
+name: Get Booking Tiers(Host/Vendor)
+description: ""
+url: "{{url}}/bookings/11dd08f3-108c-4dc2-9497-7acb43b708ea/cancellation-quote"
+method: GET
+auth:
+  type: bearer
+  credentials:
+    token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhOGZhNDdlMy05Yzk4LTQ2ZTktOWVlMC02ZWU1M2FlMTdmNWUiLCJlbWFpbCI6Imhvc3QyQGdtYWlsLmNvbSIsInJvbGUiOiJIT1NUIiwiaWF0IjoxNzkyNDA1NDYxLCJleHAiOjE3OTMwMTAyNjF9.W6TsL-UlTRJSUPFJMgIMmWY9ifdE5jfWb1_C-vNeMl4
+order: 4503599621099187

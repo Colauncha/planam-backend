@@ -1,0 +1,10 @@
+$kind: http-request
+name: Get Quotation(Host/Planner)
+description: StartFragment the host gets a 404 while it's a draft, and the vendor gets the full detail.EndFragment
+url: "{{url}}/quotations/58efcfc9-2a6b-46d3-9bce-39d1bf21354d"
+method: GET
+auth:
+  type: bearer
+  credentials:
+    token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIwZGNiZTMzOS05MDdjLTQxODEtYmU2My1mYTgxZDU4MjNlZmQiLCJlbWFpbCI6Imhvc3RAcGxhbmFtLnRlc3QiLCJyb2xlIjoiSE9TVCIsImlhdCI6MTc5MDYxODgxNSwiZXhwIjoxNzkxMjIzNjE1fQ.WxZbTdwqzLDa68LGZ8eduHkl10w1mNQl9e7QcSdbKAw
+order: 4501162635785548

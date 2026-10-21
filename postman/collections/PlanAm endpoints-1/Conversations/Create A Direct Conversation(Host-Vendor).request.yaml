@@ -1,0 +1,13 @@
+$kind: http-request
+name: Create A Direct Conversation(Host/Vendor)
+description: ""
+url: "{{url}}/conversations/direct"
+method: POST
+body:
+  type: json
+  content: '{"recipientUserId": "044cc74e-54a9-4092-8184-2e46319560c4"}'
+auth:
+  type: bearer
+  credentials:
+    token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIyM2QzMzc4YS1jYzAwLTRkM2YtOTAzNS1mNmRjN2RmYjEzYmQiLCJlbWFpbCI6Imhvc3RAcGxhbmFtLnRlc3QiLCJyb2xlIjoiSE9TVCIsImlhdCI6MTc5MTIxMTEyNSwiZXhwIjoxNzkxODE1OTI1fQ.YplsXO92r-aC47Igg4k-tCNBsojKisUEAUftn_qPWn8
+order: 1715209789201327

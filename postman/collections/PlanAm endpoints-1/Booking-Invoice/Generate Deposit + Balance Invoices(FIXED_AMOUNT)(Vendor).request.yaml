@@ -1,0 +1,24 @@
+$kind: http-request
+description: ""
+url: "{{url}}/bookings/ba0d5e5d-12ad-4ca7-8163-8f1820c7e32c/invoices/generate-split"
+method: POST
+body:
+  type: json
+  content: "{\r
+
+    \    \"depositType\": \"FIXED_AMOUNT\",\r
+
+    \     \"depositFixedAmount\": 500000,\r
+
+    \      \"depositDueDate\": \"2026-10-05\",\r
+
+    \       \"balanceDueTiming\": \"CUSTOM_DATE\",\r
+
+    \        \"balanceDueDate\": \"2026-12-15\"\r
+
+    }"
+auth:
+  type: bearer
+  credentials:
+    token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI4Yjg0YTBjMS1lYmNiLTQyMGQtYjA5NC02NWUwNWU1OTMwMWIiLCJlbWFpbCI6InZlbmRvckBwbGFuYW0udGVzdCIsInJvbGUiOiJWRU5ET1IiLCJpYXQiOjE3OTA1MjA0NjUsImV4cCI6MTc5MTEyNTI2NX0.fmhmxS0pw14pfSDhJq-OokZDNhKtG2GSXnFB_zPDXN0
+order: 4503590740671023

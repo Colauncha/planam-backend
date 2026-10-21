@@ -1,0 +1,12 @@
+$kind: http-request
+description: ""
+url: "{{url}}/events/086de2b6-3c1e-441b-9bfa-14119e25a50f/sessions"
+method: POST
+body:
+  type: json
+  content: '{ "type": "CEREMONY", "venueName": "RCCG, Strong Tower Sanctuary", "address": "39/41 Ogudu Road, Ojota, Lagos", "startTime": "2026-08-07T12:00:00Z" }'
+auth:
+  type: bearer
+  credentials:
+    token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIyM2QzMzc4YS1jYzAwLTRkM2YtOTAzNS1mNmRjN2RmYjEzYmQiLCJlbWFpbCI6Imhvc3RAcGxhbmFtLnRlc3QiLCJyb2xlIjoiSE9TVCIsImlhdCI6MTc5MTEzOTI5MiwiZXhwIjoxNzkxNzQ0MDkyfQ.vUqomeroSAgSokfsiy168tPKdyxfJdOl3HKE2Mz-KA0
+order: 4502136573750088

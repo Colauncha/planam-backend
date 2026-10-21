@@ -1,0 +1,6 @@
+$kind: collection
+name: PlanAm endpoints
+variables:
+  - key: json_web_token_029a
+    secret: true
+    disabled: false

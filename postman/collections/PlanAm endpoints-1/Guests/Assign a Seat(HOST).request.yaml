@@ -1,0 +1,12 @@
+$kind: http-request
+description: ""
+url: "{{url}}/guests/8d965eeb-5e24-4dbb-9836-556dfa1eeb78/seat"
+method: PATCH
+body:
+  type: json
+  content: '{"tableAssignment": "Table 7"}'
+auth:
+  type: bearer
+  credentials:
+    token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2YjQ4YzNiZi1jODUyLTRjY2UtOTBmZi1mYzZkMGMzMjFlOTAiLCJlbWFpbCI6Imhvc3QzQHBsYW5hbS5jb20iLCJyb2xlIjoiSE9TVCIsImlhdCI6MTc4OTc0MjYwMywiZXhwIjoxNzkwMzQ3NDAzfQ.OjJ6TqUKR3Cnecx_KEFJ09tcEhwo7huv5M7JFzRyCAM
+order: 3783707459060157

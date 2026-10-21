@@ -1,0 +1,36 @@
+$kind: http-request
+description: ""
+url: "{{url}}/bookings/price-preview"
+method: POST
+body:
+  type: json
+  content: "{ \r
+
+    \    \"eventId\":\"086de2b6-3c1e-441b-9bfa-14119e25a50f\",\r
+
+    \     \"vendorProfileId\":\"36b70f2b-6a4f-4c99-afeb-d76993fc3572\",\r
+
+    \     \"packageId\":\"e0a21d26-c11b-431a-a45b-c04fa2e05614\", \r
+
+    \     \"addOns\": [\r
+
+    \    {\r
+
+    \      \"vendorAddOnId\": \"58b5f465-ee16-433a-9c21-6a7e7db60e54\"\r
+
+    \    },\r
+
+    \    {\r
+
+    \      \"vendorAddOnId\": \"4b934812-4044-458b-a0be-763d25c42da0\"\r
+
+    \    }\r
+
+    \  ]\r
+
+    \ } "
+auth:
+  type: bearer
+  credentials:
+    token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIyM2QzMzc4YS1jYzAwLTRkM2YtOTAzNS1mNmRjN2RmYjEzYmQiLCJlbWFpbCI6Imhvc3RAcGxhbmFtLnRlc3QiLCJyb2xlIjoiSE9TVCIsImlhdCI6MTc5MTQ2MzI2MywiZXhwIjoxNzkyMDY4MDYzfQ.ObRp6JR3GJrv4XxhJMMiO-UJeTzFlp2_ZIt385fHLAo
+order: 4503597913136887

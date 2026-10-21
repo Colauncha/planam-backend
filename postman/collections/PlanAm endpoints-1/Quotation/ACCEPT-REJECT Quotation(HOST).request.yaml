@@ -1,0 +1,13 @@
+$kind: http-request
+name: ACCEPT/REJECT Quotation(HOST)
+description: ""
+url: "{{url}}/quotations/71676076-4b98-4afc-a016-69be597393c5/respond"
+method: PATCH
+body:
+  type: json
+  content: '{"status":"ACCEPTED"}'
+auth:
+  type: bearer
+  credentials:
+    token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2YjQ4YzNiZi1jODUyLTRjY2UtOTBmZi1mYzZkMGMzMjFlOTAiLCJlbWFpbCI6Imhvc3QzQHBsYW5hbS5jb20iLCJyb2xlIjoiSE9TVCIsImlhdCI6MTc4OTY0Mzg0OSwiZXhwIjoxNzkwMjQ4NjQ5fQ.O35xgpqgJIiXrYDu18Fnx79paq1eVXVgZMJtZzmL868
+order: 3980142566770056

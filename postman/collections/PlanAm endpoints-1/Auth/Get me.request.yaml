@@ -1,0 +1,9 @@
+$kind: http-request
+description: ""
+url: "{{url}}/auth/me"
+method: GET
+auth:
+  type: bearer
+  credentials:
+    token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhOTBkZjNkZS1jYmQwLTRmYTEtOTU3Zi1hN2ZjYmJlYjI5NjciLCJlbWFpbCI6Imhvc3RAcGxhbmFtLmNvbSIsInJvbGUiOiJIT1NUIiwiaWF0IjoxNzg5NjM2ODgyLCJleHAiOjE3OTAyNDE2ODJ9.T56zO_6Ho4FSxUMDs71qcKGYcz3D_a-UjB8lfkzbIiA
+order: 3937703579552023

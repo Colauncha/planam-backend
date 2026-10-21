@@ -1,0 +1,35 @@
+$kind: http-request
+name: Create Group Chat(Host/Vendor)
+description: ""
+url: "{{url}}/conversations/group"
+method: POST
+body:
+  type: json
+  content: "{\r
+
+    \    \"name\": \"Amaka's Wedding\",\r
+
+    \    \"members\": [\r
+
+    \        {\"userId\": \"23d3378a-cc00-4d3f-9035-f6dc7dfb13bd\",\r
+
+    \    \"displayRole\": \"Event Manager\",\r
+
+    \    \"isFacilitator\": true}, \r
+
+    \    {\r
+
+    \    \"userId\": \"f423a774-2f1f-404e-9d10-bdde57e90125\", \r
+
+    \    \"displayRole\": \"Caterer\"\r
+
+    \    }\r
+
+    \    ]\r
+
+    }"
+auth:
+  type: bearer
+  credentials:
+    token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIwNDRjYzc0ZS01NGE5LTQwOTItODE4NC0yZTQ2MzE5NTYwYzQiLCJlbWFpbCI6InZlbmRvci5wbGFuYW1AZ21haWwuY29tIiwicm9sZSI6IlZFTkRPUiIsImlhdCI6MTc5MTI4MDU2NiwiZXhwIjoxNzkxODg1MzY2fQ.zQaeYKK5TYE4Fa0aIqMkEJQFeJSD9E5q6ELohJDoCVs
+order: 4102832691500650

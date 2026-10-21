@@ -1,0 +1,17 @@
+$kind: http-request
+name: Update Users Notifications In Settings(Host/Vendor)
+description: ""
+url: "{{url}}/users/me/settings/notifications"
+method: PATCH
+body:
+  type: json
+  content: "{\r
+
+    \    \"marketingEmails\": false\r
+
+    }"
+auth:
+  type: bearer
+  credentials:
+    token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIwNDRjYzc0ZS01NGE5LTQwOTItODE4NC0yZTQ2MzE5NTYwYzQiLCJlbWFpbCI6InZlbmRvckBwbGFuYW0udGVzdCIsInJvbGUiOiJWRU5ET1IiLCJpYXQiOjE3OTEwMjEyNjMsImV4cCI6MTc5MTYyNjA2M30.SyKZqvUAXIFfXw3R5c8p9_CzkOoJmu-Y4V_mB3kLGYk
+order: 4204256408083427

@@ -1,0 +1,13 @@
+$kind: http-request
+name: Vendor/Planner blocks availability(VENDOR/PLANNER)
+description: ""
+url: "{{url}}/vendors/me/availability/block"
+method: PATCH
+body:
+  type: json
+  content: '{"date": "2026-11-10"}'
+auth:
+  type: bearer
+  credentials:
+    token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJjN2RiMGY4MS1jNGMzLTQwN2YtOGFiOC0yZTU2OGVmMDFiMTYiLCJlbWFpbCI6InZlbmRvcjNAcGxhbmFtLmNvbSIsInJvbGUiOiJWRU5ET1IiLCJpYXQiOjE3ODk2NjQ2MzksImV4cCI6MTc5MDI2OTQzOX0.th7WL2-6iuV46mV5OkMUiyUX9b-18ZlRUiavFhjCUs8
+order: 1520875345069297

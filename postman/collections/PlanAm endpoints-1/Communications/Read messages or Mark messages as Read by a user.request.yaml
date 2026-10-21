@@ -1,0 +1,9 @@
+$kind: http-request
+description: ""
+url: "{{url}}/messages/with/6b48c3bf-c852-4cce-90ff-fc6d0c321e90/read"
+method: PATCH
+auth:
+  type: bearer
+  credentials:
+    token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJjN2RiMGY4MS1jNGMzLTQwN2YtOGFiOC0yZTU2OGVmMDFiMTYiLCJlbWFpbCI6InZlbmRvcjNAcGxhbmFtLmNvbSIsInJvbGUiOiJWRU5ET1IiLCJpYXQiOjE3ODk3MTUzMDMsImV4cCI6MTc5MDMyMDEwM30.zxBhuMUw4LTzfmV4MYVKjWvLyX5hoJY_7qu9XaicU_c
+order: 4453847575463073

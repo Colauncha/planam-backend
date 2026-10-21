@@ -1,0 +1,17 @@
+$kind: http-request
+name: Add New Member To Group Chat(Host/Vendor)
+description: ""
+url: "{{url}}/conversations/bf4ddad6-eb84-4f5a-9e28-080c71f99d38/members"
+method: POST
+body:
+  type: json
+  content: "{\r
+
+    \    \"userId\":\"f62ba357-8722-4469-a038-6dc32592a17b\"\r
+
+    }"
+auth:
+  type: bearer
+  credentials:
+    token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIwNDRjYzc0ZS01NGE5LTQwOTItODE4NC0yZTQ2MzE5NTYwYzQiLCJlbWFpbCI6InZlbmRvci5wbGFuYW1AZ21haWwuY29tIiwicm9sZSI6IlZFTkRPUiIsImlhdCI6MTc5MTI4MDU2NiwiZXhwIjoxNzkxODg1MzY2fQ.zQaeYKK5TYE4Fa0aIqMkEJQFeJSD9E5q6ELohJDoCVs
+order: 4491235254091267

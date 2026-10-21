@@ -1,0 +1,9 @@
+$kind: http-request
+description: ""
+url: "{{url}}/notifications/read-all"
+method: PATCH
+auth:
+  type: bearer
+  credentials:
+    token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJjN2RiMGY4MS1jNGMzLTQwN2YtOGFiOC0yZTU2OGVmMDFiMTYiLCJlbWFpbCI6InZlbmRvcjNAcGxhbmFtLmNvbSIsInJvbGUiOiJWRU5ET1IiLCJpYXQiOjE3ODk5MzE0MTEsImV4cCI6MTc5MDUzNjIxMX0.k1ZslixffhyujT_t8jA0EkmIwJ2oHFdiCm6QIcY6lGQ
+order: 3795432004125135

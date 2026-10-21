@@ -1,0 +1,18 @@
+$kind: http-request
+description: ""
+url: "{{url}}/packages/1f4ece4b-811f-4c9c-8c62-0f272cb99a92"
+method: PATCH
+body:
+  type: json
+  content: "{\r
+
+    \    \"pricingType\":\"PER_GUEST\",\r
+
+    \    \"negotiablePrice\":27000\r
+
+    }"
+auth:
+  type: bearer
+  credentials:
+    token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxZDA4NzRlMy1lZDE3LTQ1NDEtOTZmYi0zZWQzNzQzMzkxOWQiLCJlbWFpbCI6InZlbmRvcjRAcGxhbmFtLnRlc3QiLCJyb2xlIjoiVkVORE9SIiwiaWF0IjoxNzkxNTY0MjMyLCJleHAiOjE3OTIxNjkwMzJ9.QwnFRvsQOGKr63ZvsGAhp5G1YHi8HJy7qMXk8tFfhMU
+order: 4503028290903781

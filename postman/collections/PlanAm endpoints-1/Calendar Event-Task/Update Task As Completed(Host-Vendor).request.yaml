@@ -1,0 +1,13 @@
+$kind: http-request
+name: Update Task As Completed(Host/Vendor)
+description: ""
+url: "{{url}}/tasks/bb82b696-9e1e-454d-b0a9-b1c9744ecc00"
+method: PATCH
+body:
+  type: json
+  content: "{\r\n    \"isCompleted\": true\r\n}"
+auth:
+  type: bearer
+  credentials:
+    token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI5YTM0YzAwNy04ODg3LTQxNDYtYTJjOC1kNzcyMDFlODJhZWQiLCJlbWFpbCI6InZlbmRvckBwbGFuYW0udGVzdCIsInJvbGUiOiJWRU5ET1IiLCJpYXQiOjE3OTA3Nzc2NDgsImV4cCI6MTc5MTM4MjQ0OH0.JXbBZ1g8Gvs2Tw-yYC1priBGxDLgV1Tyhuhuc0h4AmI
+order: 4445163767066253

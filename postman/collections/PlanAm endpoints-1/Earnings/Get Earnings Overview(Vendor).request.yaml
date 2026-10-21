@@ -1,0 +1,9 @@
+$kind: http-request
+description: ""
+url: "{{url}}/earnings/overview"
+method: GET
+auth:
+  type: bearer
+  credentials:
+    token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIwNDRjYzc0ZS01NGE5LTQwOTItODE4NC0yZTQ2MzE5NTYwYzQiLCJlbWFpbCI6InZlbmRvckBwbGFuYW0udGVzdCIsInJvbGUiOiJWRU5ET1IiLCJpYXQiOjE3OTEwMjQ5NTIsImV4cCI6MTc5MTYyOTc1Mn0.YegxVYXWvq-cJ4XzXEGgW5qP6YTe5_PO69oMp8Mlm3w
+order: 723723536142738

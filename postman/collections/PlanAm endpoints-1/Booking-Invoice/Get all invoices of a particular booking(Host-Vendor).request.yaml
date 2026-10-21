@@ -1,0 +1,10 @@
+$kind: http-request
+name: Get all invoices of a particular booking(Host/Vendor)
+description: ""
+url: "{{url}}/bookings/81f866df-d47e-4b7b-8c6e-4255964d8e25/invoices"
+method: GET
+auth:
+  type: bearer
+  credentials:
+    token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJjN2RiMGY4MS1jNGMzLTQwN2YtOGFiOC0yZTU2OGVmMDFiMTYiLCJlbWFpbCI6InZlbmRvcjNAcGxhbmFtLmNvbSIsInJvbGUiOiJWRU5ET1IiLCJpYXQiOjE3ODk3MDg2ODgsImV4cCI6MTc5MDMxMzQ4OH0.jOfyEm-92hpOWRJxpZ2WV7FmPqDiJZ7HsVNZmxpYk2k
+order: 3057198756624049

@@ -1,0 +1,5 @@
+$kind: http-request
+description: ""
+url: "{{url}}/events/4d6a1a03-bedf-465f-8023-d03a5d73d939/reviews"
+method: GET
+order: 4497422360367776

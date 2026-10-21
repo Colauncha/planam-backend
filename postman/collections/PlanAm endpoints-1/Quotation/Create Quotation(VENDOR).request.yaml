@@ -1,0 +1,28 @@
+$kind: http-request
+description: ""
+url: "{{url}}/leads/e9f10ca4-f43c-4acd-8426-453de4bd953e/quotation"
+method: POST
+body:
+  type: json
+  content: "{\r
+
+    \  \"lineItems\": [\r
+
+    \    { \"description\": \"Photos for 150 guests \", \"amount\": 5000 },\r
+
+    \    { \"description\": \"Service staff (10 photographers, 6 hours)\", \"amount\": 5000 },\r
+
+    \    { \"description\": \"Camera, lens & tripod rental\", \"amount\": 4000 }\r
+
+    \  ],\r
+
+    \  \"totalAmount\": 14000,\r
+
+    \  \"terms\": \"50% deposit required to confirm booking, balance due 3 days before event\"\r
+
+    }"
+auth:
+  type: bearer
+  credentials:
+    token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJjN2RiMGY4MS1jNGMzLTQwN2YtOGFiOC0yZTU2OGVmMDFiMTYiLCJlbWFpbCI6InZlbmRvcjNAcGxhbmFtLmNvbSIsInJvbGUiOiJWRU5ET1IiLCJpYXQiOjE3ODk2NDI3ODAsImV4cCI6MTc5MDI0NzU4MH0.FTqe2lKBBRjw5wtnILY8HM993-5BFSFjWPHY26_qKuI
+order: 1789643692191

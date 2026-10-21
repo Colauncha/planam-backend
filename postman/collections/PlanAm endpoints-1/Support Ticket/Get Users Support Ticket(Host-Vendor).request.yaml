@@ -1,0 +1,10 @@
+$kind: http-request
+name: Get Users Support Ticket(Host/Vendor)
+description: ""
+url: "{{url}}/support/tickets"
+method: GET
+auth:
+  type: bearer
+  credentials:
+    token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIwNDRjYzc0ZS01NGE5LTQwOTItODE4NC0yZTQ2MzE5NTYwYzQiLCJlbWFpbCI6InZlbmRvckBwbGFuYW0udGVzdCIsInJvbGUiOiJWRU5ET1IiLCJpYXQiOjE3OTExMDM3NTIsImV4cCI6MTc5MTcwODU1Mn0.oaoC7e7ny8wXUzyRcnCIuo9IphhWEuPQ-F8RuA7mJPw
+order: 3832939960286404

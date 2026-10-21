@@ -1,0 +1,5 @@
+$kind: http-request
+description: ""
+url: "{{url}}/packages/ec20d48b-bb99-4158-8392-b29230265e75/menu-items"
+method: GET
+order: 4503028290902781

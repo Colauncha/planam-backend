@@ -1,0 +1,10 @@
+$kind: http-request
+name: Get Generated Deposit and Balance Invoices(Host/Planner)
+description: ""
+url: "{{url}}/bookings/ba0d5e5d-12ad-4ca7-8163-8f1820c7e32c/invoices"
+method: GET
+auth:
+  type: bearer
+  credentials:
+    token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI4Yjg0YTBjMS1lYmNiLTQyMGQtYjA5NC02NWUwNWU1OTMwMWIiLCJlbWFpbCI6InZlbmRvckBwbGFuYW0udGVzdCIsInJvbGUiOiJWRU5ET1IiLCJpYXQiOjE3OTA1MTg4NDAsImV4cCI6MTc5MTEyMzY0MH0.Lg_v2A4QgAnEOvYtDoFYyln69EnWsgO541RNkhc3ay0
+order: 4503587804802699

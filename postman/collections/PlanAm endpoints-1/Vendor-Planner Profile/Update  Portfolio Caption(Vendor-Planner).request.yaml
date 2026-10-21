@@ -1,0 +1,13 @@
+$kind: http-request
+name: Update  Portfolio Caption(Vendor/Planner)
+description: ""
+url: "{{url}}/users/me/vendor-profile/portfolio/26b0086a-dd67-411e-b27a-b579103e3092"
+method: PATCH
+body:
+  type: json
+  content: '{"caption": "Updated caption"}'
+auth:
+  type: bearer
+  credentials:
+    token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIwNDRjYzc0ZS01NGE5LTQwOTItODE4NC0yZTQ2MzE5NTYwYzQiLCJlbWFpbCI6InZlbmRvckBwbGFuYW0udGVzdCIsInJvbGUiOiJWRU5ET1IiLCJpYXQiOjE3OTA5Mzc4OTgsImV4cCI6MTc5MTU0MjY5OH0.b79htdB8ui_fNj_v5aetnSsEcNp16mqpahv4UEs0yWw
+order: 4502824750803883

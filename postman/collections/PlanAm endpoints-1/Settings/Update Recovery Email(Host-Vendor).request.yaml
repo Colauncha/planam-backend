@@ -1,0 +1,17 @@
+$kind: http-request
+name: Update Recovery Email(Host/Vendor)
+description: ""
+url: "{{url}}/users/me/settings/security/recovery"
+method: PATCH
+body:
+  type: json
+  content: "{\r
+
+    \    \"recoveryEmail\": \"backup@example.com\"\r
+
+    }"
+auth:
+  type: bearer
+  credentials:
+    token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIwNDRjYzc0ZS01NGE5LTQwOTItODE4NC0yZTQ2MzE5NTYwYzQiLCJlbWFpbCI6InZlbmRvckBwbGFuYW0udGVzdCIsInJvbGUiOiJWRU5ET1IiLCJpYXQiOjE3OTEwMjM1MjMsImV4cCI6MTc5MTYyODMyM30.9wXfBXnKOKnXtJ-LXuh7R50xQf_1HXMR7oOe6KvstuQ
+order: 4355192909065650

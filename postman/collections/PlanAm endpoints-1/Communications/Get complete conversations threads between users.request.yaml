@@ -1,0 +1,9 @@
+$kind: http-request
+description: ""
+url: "{{url}}/messages/with/6b48c3bf-c852-4cce-90ff-fc6d0c321e90"
+method: GET
+auth:
+  type: bearer
+  credentials:
+    token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJjN2RiMGY4MS1jNGMzLTQwN2YtOGFiOC0yZTU2OGVmMDFiMTYiLCJlbWFpbCI6InZlbmRvcjNAcGxhbmFtLmNvbSIsInJvbGUiOiJWRU5ET1IiLCJpYXQiOjE3ODk3MTQxNjAsImV4cCI6MTc5MDMxODk2MH0.CkrwKKGKbn0RPgydvfEByZdxmf9u-dUCb7MWQElByLA
+order: 4259359539009500

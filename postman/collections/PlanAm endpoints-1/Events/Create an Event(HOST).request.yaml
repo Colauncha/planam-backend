@@ -1,0 +1,24 @@
+$kind: http-request
+description: ""
+url: http://127.0.0.1:3000/events
+method: POST
+body:
+  type: json
+  content: "{\r
+
+    \  \"title\": \"OGKPOS Birthday\",\r
+
+    \  \"eventType\": \"BIRTHDAY\",\r
+
+    \  \"eventDate\": \"2026-07-04\",\r
+
+    \  \"guestCapacity\": 150,\r
+
+    \  \"budget\": 50000\r
+
+    }"
+auth:
+  type: bearer
+  credentials:
+    token: "{{json_web_token_029a}}"
+order: 2345034941982572

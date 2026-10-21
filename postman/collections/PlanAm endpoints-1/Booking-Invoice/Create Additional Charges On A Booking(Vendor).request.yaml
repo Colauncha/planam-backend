@@ -1,0 +1,20 @@
+$kind: http-request
+description: ""
+url: "{{url}}/bookings/6de5280f-0b5b-4379-852c-6a20f99e5244/additional-charges"
+method: POST
+body:
+  type: json
+  content: "{\r
+
+    \  \"description\": \"Extra 2 hours of coverage\",\r
+
+    \  \"amount\": 120000,\r
+
+    \  \"dueDate\": \"2027-01-10T00:00:00.000Z\"\r
+
+    }"
+auth:
+  type: bearer
+  credentials:
+    token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxZDA4NzRlMy1lZDE3LTQ1NDEtOTZmYi0zZWQzNzQzMzkxOWQiLCJlbWFpbCI6InZlbmRvcjRAcGxhbmFtLnRlc3QiLCJyb2xlIjoiVkVORE9SIiwiaWF0IjoxNzkxODA5NTU4LCJleHAiOjE3OTI0MTQzNTh9.dUBTim6T7Y09Y6YpiYF-HfIE0lM_tDbT2SFZvS3kWL4
+order: 4503599621095187

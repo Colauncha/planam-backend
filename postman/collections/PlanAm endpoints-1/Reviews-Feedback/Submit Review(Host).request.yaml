@@ -1,0 +1,12 @@
+$kind: http-request
+description: ""
+url: "{{url}}/events/4d6a1a03-bedf-465f-8023-d03a5d73d939/reviews"
+method: POST
+body:
+  type: json
+  content: '{"vendorProfileId": "53db4eb1-e290-4578-ac66-06adcdd39d4e", "rating": 5, "comment": "The photographer was awesome!"}'
+auth:
+  type: bearer
+  credentials:
+    token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2YjQ4YzNiZi1jODUyLTRjY2UtOTBmZi1mYzZkMGMzMjFlOTAiLCJlbWFpbCI6Imhvc3QzQHBsYW5hbS5jb20iLCJyb2xlIjoiSE9TVCIsImlhdCI6MTc4OTgxOTMzMSwiZXhwIjoxNzkwNDI0MTMxfQ.3b5vZ4KA3TyHiMLSxVaziVK2DTqgCIH2oiPDafjJE9Y
+order: 2912979649255241

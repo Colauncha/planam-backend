@@ -1,0 +1,10 @@
+$kind: http-request
+name: Delete TaskList(Host/Vendor)
+description: ""
+url: "{{url}}/task-lists/ee4e9fa3-936f-474c-81a6-aef6dc0a9f81"
+method: DELETE
+auth:
+  type: bearer
+  credentials:
+    token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIwNDRjYzc0ZS01NGE5LTQwOTItODE4NC0yZTQ2MzE5NTYwYzQiLCJlbWFpbCI6InZlbmRvckBwbGFuYW0udGVzdCIsInJvbGUiOiJWRU5ET1IiLCJpYXQiOjE3OTA4MDU2MzIsImV4cCI6MTc5MTQxMDQzMn0.glm4QKIG5C3iLGJL79oKgxWjSI-gfs7FrwKj_5eRXaI
+order: 4502903479571556

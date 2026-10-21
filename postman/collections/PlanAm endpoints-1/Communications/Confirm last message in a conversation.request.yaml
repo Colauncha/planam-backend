@@ -1,0 +1,9 @@
+$kind: http-request
+description: ""
+url: "{{url}}/messages/conversations"
+method: GET
+auth:
+  type: bearer
+  credentials:
+    token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2YjQ4YzNiZi1jODUyLTRjY2UtOTBmZi1mYzZkMGMzMjFlOTAiLCJlbWFpbCI6Imhvc3QzQHBsYW5hbS5jb20iLCJyb2xlIjoiSE9TVCIsImlhdCI6MTc4OTcxMzg3OCwiZXhwIjoxNzkwMzE4Njc4fQ.PfqX9OvmtspEaJV9X6iTJyHIiVmxmE8YePKsEvSmpyg
+order: 3997851108863042

@@ -1,0 +1,19 @@
+$kind: http-request
+name: Upload Users Image/Avatar (Host/Vendor)
+description: ""
+url: "{{url}}/users/me/settings/general/avatar"
+method: POST
+body:
+  type: formdata
+  content:
+    - type: file
+      key: file
+      src:
+        - /C:/Users/OGKpos/Videos/XenderDownload/image/cover/0b0fea14-4f9a-4861-83f4-5ad4d5e93e00_audio.png
+      description: ""
+      disabled: false
+auth:
+  type: bearer
+  credentials:
+    token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIwNDRjYzc0ZS01NGE5LTQwOTItODE4NC0yZTQ2MzE5NTYwYzQiLCJlbWFpbCI6InZlbmRvckBwbGFuYW0udGVzdCIsInJvbGUiOiJWRU5ET1IiLCJpYXQiOjE3OTEwMjEyNjMsImV4cCI6MTc5MTYyNjA2M30.SyKZqvUAXIFfXw3R5c8p9_CzkOoJmu-Y4V_mB3kLGYk
+order: 3304722159362504

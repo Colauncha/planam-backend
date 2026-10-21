@@ -1,0 +1,21 @@
+$kind: http-request
+name: Send/Receive messages between users
+description: ""
+url: "{{url}}/messages"
+method: POST
+body:
+  type: json
+  content: "{ \r
+
+    \    \"receiverId\": \"c7db0f81-c4c3-407f-8ab8-2e568ef01b16\", \r
+
+    \"eventId\": \"4d6a1a03-bedf-465f-8023-d03a5d73d939\", \r
+
+    \"content\": \"Can we confirm the arrival time for setup?\"\r
+
+    \ }"
+auth:
+  type: bearer
+  credentials:
+    token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2YjQ4YzNiZi1jODUyLTRjY2UtOTBmZi1mYzZkMGMzMjFlOTAiLCJlbWFpbCI6Imhvc3QzQHBsYW5hbS5jb20iLCJyb2xlIjoiSE9TVCIsImlhdCI6MTc4OTcxMjg5MiwiZXhwIjoxNzkwMzE3NjkyfQ.xCISXlpxIgLM46kJtPLmRp-2NU6_vtZTa_hgG1Gn9vw
+order: 3368786276955474

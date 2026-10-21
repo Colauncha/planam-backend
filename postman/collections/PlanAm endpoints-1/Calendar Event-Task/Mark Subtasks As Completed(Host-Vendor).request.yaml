@@ -1,0 +1,13 @@
+$kind: http-request
+name: Mark Subtasks As Completed(Host/Vendor)
+description: ""
+url: "{{url}}/tasks/subtasks/b6295e6e-e596-4659-90e7-25223a47af7e"
+method: PATCH
+body:
+  type: json
+  content: '{"isCompleted": true}'
+auth:
+  type: bearer
+  credentials:
+    token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIwNDRjYzc0ZS01NGE5LTQwOTItODE4NC0yZTQ2MzE5NTYwYzQiLCJlbWFpbCI6InZlbmRvckBwbGFuYW0udGVzdCIsInJvbGUiOiJWRU5ET1IiLCJpYXQiOjE3OTA4MDU2MzIsImV4cCI6MTc5MTQxMDQzMn0.glm4QKIG5C3iLGJL79oKgxWjSI-gfs7FrwKj_5eRXaI
+order: 4499197464038840

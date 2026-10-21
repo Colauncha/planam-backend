@@ -1,0 +1,18 @@
+$kind: http-request
+description: ""
+url: "{{url}}/bookings/41f35c13-ad11-438b-a0f3-80276ea3ae72/notes"
+method: POST
+body:
+  type: json
+  content: "{\r
+
+    \    \"type\": \"INTERNAL\", \r
+
+    \    \"content\": \"Confirm final guest count 3 days before event\"\r
+
+    }"
+auth:
+  type: bearer
+  credentials:
+    token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJjN2RiMGY4MS1jNGMzLTQwN2YtOGFiOC0yZTU2OGVmMDFiMTYiLCJlbWFpbCI6InZlbmRvcjNAcGxhbmFtLmNvbSIsInJvbGUiOiJWRU5ET1IiLCJpYXQiOjE3OTA0MjEyOTUsImV4cCI6MTc5MTAyNjA5NX0.jraBl5RQMmQJsAGgDfJEq93ZXadZATbPl07APdwAbaM
+order: 4502375189219451

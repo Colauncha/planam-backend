@@ -1,0 +1,21 @@
+$kind: http-request
+name: Register users(HOST/VENDOR/GUEST)
+description: ""
+url: "{{url}}/users"
+method: POST
+body:
+  type: json
+  content: "{\r
+
+    \  \"email\":\"vendor3@planam.com\",\r
+
+    \  \"fullName\":\"test vendor\",\r
+
+    \  \"password\":\"securepass123\",\r
+
+    \  \"role\":\"VENDOR\",\r
+
+    \  \"phone\":\"08076224509\"\r
+
+    }\r\n"
+order: 3602848828645692

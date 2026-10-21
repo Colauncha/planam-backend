@@ -1,0 +1,23 @@
+$kind: http-request
+name: Update Booking Details(Vendor/Planner)
+description: ""
+url: "{{url}}/bookings/41f35c13-ad11-438b-a0f3-80276ea3ae72/details"
+method: PATCH
+body:
+  type: json
+  content: "{\r
+
+    \    \"packageId\": \"81e01911-cc73-4ca7-82ed-a2627176ab03\",\r
+
+    \     \"guestCount\": 350, \r
+
+    \     \"venue\": \"Lekki, Lagos\",\r
+
+    \    \"serviceDurationHours\": 12\r
+
+    }"
+auth:
+  type: bearer
+  credentials:
+    token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJjN2RiMGY4MS1jNGMzLTQwN2YtOGFiOC0yZTU2OGVmMDFiMTYiLCJlbWFpbCI6InZlbmRvcjNAcGxhbmFtLmNvbSIsInJvbGUiOiJWRU5ET1IiLCJpYXQiOjE3OTA0MTgwNTgsImV4cCI6MTc5MTAyMjg1OH0.cAbVCwyjnjwCg38wl2ISF9mgdpu6OhhnYvxlmdTKpd4
+order: 3924964937656515

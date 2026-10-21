@@ -21,6 +21,14 @@ export class AuthService {
       throw new UnauthorizedException('Invalid credentials');
     }
 
+    if (!user.isActive) {
+      await this.prisma.user.update({
+        where: { id: user.id },
+        data: { isActive: true },
+      });
+      user.isActive = true;
+    }
+
     const payload = { sub: user.id, email: user.email, role: user.role };
     const accessToken = await this.jwtService.signAsync(payload);
 

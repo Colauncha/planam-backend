@@ -1,0 +1,9 @@
+$kind: http-request
+description: ""
+url: "{{url}}/events/086de2b6-3c1e-441b-9bfa-14119e25a50f/budget-allocations"
+method: GET
+auth:
+  type: bearer
+  credentials:
+    token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIyM2QzMzc4YS1jYzAwLTRkM2YtOTAzNS1mNmRjN2RmYjEzYmQiLCJlbWFpbCI6Imhvc3RAcGxhbmFtLnRlc3QiLCJyb2xlIjoiSE9TVCIsImlhdCI6MTc5MTQ0NzE4OSwiZXhwIjoxNzkyMDUxOTg5fQ.Rls5Vjsd5mmO1irgojIupCFEdZ6edDQgh72HqpFMUjY
+order: 3851861772360291
